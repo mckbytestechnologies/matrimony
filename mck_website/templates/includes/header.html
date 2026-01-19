@@ -1,0 +1,997 @@
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimony - Find Your Perfect Match</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ff4d8d;
+            --deep-pink: #e60073;
+            --light-pink: #ffb6c1;
+            --soft-pink: #fff5f7;
+            --gold: #ffd700;
+            --light-gold: #fff8dc;
+            --dark-bg: #1a1a2e;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --text-dark: #333;
+            --text-light: #666;
+            --shadow: 0 4px 20px rgba(255, 77, 141, 0.15);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--soft-pink);
+        }
+        
+        /* Announcement Bar */
+        .announce-bar {
+            background: linear-gradient(90deg, var(--deep-pink), var(--primary-pink));
+            color: white;
+            padding: 8px 0;
+            position: relative;
+            overflow: hidden;
+            font-size: 0.9rem;
+        }
+        
+        .announce-track {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 30s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .announce-close {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .announce-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        /* Navbar Container */
+        .matrimony-nav {
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary-pink), var(--deep-pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        
+        .logo-icon i {
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--deep-pink), var(--primary-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-tagline {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: -5px;
+        }
+        
+        /* Main Navigation */
+        .main-nav {
+            display: flex;
+            gap: 30px;
+            margin: 0 auto;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 0;
+            position: relative;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-pink);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-pink), var(--deep-pink));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Dropdown Menus */
+        .nav-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            border: 1px solid rgba(255, 77, 141, 0.1);
+        }
+        
+        .nav-item:hover .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 12px 25px;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .dropdown-item:hover {
+            background: var(--soft-pink);
+            color: var(--deep-pink);
+            padding-left: 30px;
+        }
+        
+        .dropdown-item i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* User Section */
+        .user-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .premium-badge {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #8b6914;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .premium-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .user-profile {
+            position: relative;
+        }
+        
+        .user-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary-pink), var(--deep-pink));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .user-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 77, 141, 0.3);
+        }
+        
+        .user-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary-pink);
+        }
+        
+        .user-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            min-width: 200px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .user-profile:hover .user-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .user-menu-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .user-menu-item:hover {
+            background: var(--soft-pink);
+            color: var(--deep-pink);
+        }
+        
+        .user-menu-divider {
+            height: 1px;
+            background: #eee;
+            margin: 10px 0;
+        }
+        
+        .logout-item {
+            color: #ff4444;
+        }
+        
+        /* Auth Buttons */
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .auth-btn {
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .login-btn {
+            background: transparent;
+            border: 2px solid var(--primary-pink);
+            color: var(--primary-pink);
+        }
+        
+        .login-btn:hover {
+            background: var(--primary-pink);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .register-btn {
+            background: linear-gradient(135deg, var(--primary-pink), var(--deep-pink));
+            color: white;
+            border: 2px solid transparent;
+        }
+        
+        .register-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 77, 141, 0.3);
+        }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: white;
+            z-index: 2000;
+            transition: right 0.3s ease;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mobile-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+        
+        .mobile-nav-content {
+            padding: 20px;
+            overflow-y: auto;
+            height: calc(100vh - 80px);
+        }
+        
+        .mobile-nav-item {
+            margin-bottom: 10px;
+        }
+        
+        .mobile-nav-link {
+            display: block;
+            padding: 15px;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 10px;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .mobile-nav-link:hover {
+            background: var(--soft-pink);
+            color: var(--deep-pink);
+        }
+        
+        .mobile-dropdown-toggle {
+            width: 100%;
+            text-align: left;
+            padding: 15px;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .mobile-dropdown-toggle:hover {
+            background: var(--soft-pink);
+            color: var(--deep-pink);
+        }
+        
+        .mobile-dropdown {
+            padding-left: 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-dropdown.active {
+            max-height: 500px;
+        }
+        
+        .mobile-dropdown-item {
+            display: block;
+            padding: 12px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+            border-radius: 8px;
+        }
+        
+        .mobile-dropdown-item:hover {
+            background: var(--soft-pink);
+            color: var(--deep-pink);
+            padding-left: 20px;
+        }
+        
+        /* Overlay */
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1500;
+            display: none;
+        }
+        
+        .mobile-overlay.active {
+            display: block;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-nav {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .announce-track {
+                animation: marquee 20s linear infinite;
+            }
+            
+            .main-nav, .user-section {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .mobile-nav {
+                width: 280px;
+            }
+        }
+        
+        /* Special Features */
+        .heart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--gold);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Verified Badge */
+        .verified {
+            color: #4CAF50;
+            margin-left: 5px;
+        }
+        
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            min-width: 120px;
+            display: none;
+        }
+        
+        .language-selector:hover .lang-dropdown {
+            display: block;
+        }
+        
+        .lang-option {
+            padding: 8px 15px;
+            display: block;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .lang-option:hover {
+            background: var(--soft-pink);
+            color: var(--deep-pink);
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announce-bar" id="announceBar">
+        <div class="announce-track">
+            🤍 Find Your Perfect Match • Verified Profiles • Safe & Secure • Personalized Matchmaking • Trusted by Thousands • 
+        </div>
+        <button class="announce-close" id="announceClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="matrimony-nav">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="main-nav">
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-search"></i> Search
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-filter"></i> Advanced Search
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-star"></i> Featured Profiles
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-heart"></i> Perfect Matches
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-globe"></i> Community Search
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-users"></i> Matches
+                        
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-bolt"></i> New Matches
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-gem"></i> Premium Matches
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-handshake"></i> Mutual Matches
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-history"></i> Recently Viewed
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user-friends"></i> Community
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-calendar-alt"></i> Events & Meetups
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-comments"></i> Success Stories
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-book"></i> Relationship Blog
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-hands-helping"></i> Counseling
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="{% url 'mck_website:pricing' %}" class="nav-link">
+                        <i class="fas fa-gem"></i> Premium
+                    </a>
+                </div>
+            </div>
+
+            <!-- User Section -->
+            <div class="user-section">
+                <a href="#" class="premium-badge">
+                    <i class="fas fa-crown"></i> Go Premium
+                </a>
+
+                {% if user.is_authenticated %}
+                <div class="user-profile">
+                    <button class="user-btn">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        {{ user.first_name|default:user.username }}
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="user-menu">
+                        <a href="#" class="user-menu-item">
+                            <i class="fas fa-user-circle"></i> My Profile
+                        </a>
+                        <a href="#" class="user-menu-item">
+                            <i class="fas fa-heart"></i> My Matches
+                        </a>
+                        <a href="#" class="user-menu-item">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        <div class="user-menu-divider"></div>
+                        <a href="{% url 'mck_auth:website_logout' %}" class="user-menu-item logout-item">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+                {% else %}
+                <div class="auth-buttons">
+                    <a href="{% url 'mck_auth:website_signin' %}" class="auth-btn login-btn">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                    <a href="{% url 'mck_auth:website_signup' %}" class="auth-btn register-btn">
+                        <i class="fas fa-user-plus"></i> Register
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="logo-text">Soulmate Connect</div>
+            </div>
+            <button class="mobile-close-btn" id="mobileCloseBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-content">
+            {% if user.is_authenticated %}
+            <div class="user-profile-mobile">
+                <div class="user-btn" style="margin-bottom: 20px;">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    {{ user.first_name|default:user.username }}
+                </div>
+                <a href="#" class="mobile-nav-link">
+                    <i class="fas fa-user-circle"></i> My Profile
+                </a>
+                <a href="#" class="mobile-nav-link">
+                    <i class="fas fa-heart"></i> My Matches
+                </a>
+            </div>
+            {% else %}
+            <div class="mobile-auth" style="margin-bottom: 20px;">
+                <a href="{% url 'mck_auth:website_signin' %}" class="auth-btn login-btn" style="margin-bottom: 10px;">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="{% url 'mck_auth:website_signup' %}" class="auth-btn register-btn">
+                    <i class="fas fa-user-plus"></i> Register
+                </a>
+            </div>
+            {% endif %}
+
+            <div class="mobile-nav-item">
+                <button class="mobile-dropdown-toggle">
+                    <span><i class="fas fa-search"></i> Search</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="#" class="mobile-dropdown-item">
+                        <i class="fas fa-filter"></i> Advanced Search
+                    </a>
+                    <a href="#" class="mobile-dropdown-item">
+                        <i class="fas fa-star"></i> Featured Profiles
+                    </a>
+                    <a href="#" class="mobile-dropdown-item">
+                        <i class="fas fa-heart"></i> Perfect Matches
+                    </a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-item">
+                <button class="mobile-dropdown-toggle">
+                    <span><i class="fas fa-users"></i> Matches</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="#" class="mobile-dropdown-item">
+                        <i class="fas fa-bolt"></i> New Matches
+                    </a>
+                    <a href="#" class="mobile-dropdown-item">
+                        <i class="fas fa-gem"></i> Premium Matches
+                    </a>
+                    <a href="#" class="mobile-dropdown-item">
+                        <i class="fas fa-handshake"></i> Mutual Matches
+                    </a>
+                </div>
+            </div>
+
+            <a href="#" class="mobile-nav-link">
+                <i class="fas fa-user-friends"></i> Community
+            </a>
+            
+            <a href="#" class="mobile-nav-link">
+                <i class="fas fa-gem"></i> Premium
+            </a>
+
+            <a href="#" class="mobile-nav-link">
+                <i class="fas fa-calendar-alt"></i> Events
+            </a>
+
+            <a href="#" class="mobile-nav-link">
+                <i class="fas fa-book"></i> Blog
+            </a>
+
+            {% if user.is_authenticated %}
+            <div class="user-menu-divider"></div>
+            <a href="#" class="mobile-nav-link">
+                <i class="fas fa-cog"></i> Settings
+            </a>
+            <a href="{% url 'mck_auth:website_logout' %}" class="mobile-nav-link logout-item">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Announcement Bar
+            const announceBar = document.getElementById('announceBar');
+            const announceClose = document.getElementById('announceClose');
+            
+            if (announceClose) {
+                announceClose.addEventListener('click', function() {
+                    announceBar.style.display = 'none';
+                });
+            }
+            
+            // Mobile Menu
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            
+            function openMobileMenu() {
+                mobileNav.classList.add('active');
+                mobileOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeMobileMenu() {
+                mobileNav.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                
+                // Close all dropdowns
+                document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', openMobileMenu);
+            }
+            
+            if (mobileCloseBtn) {
+                mobileCloseBtn.addEventListener('click', closeMobileMenu);
+            }
+            
+            if (mobileOverlay) {
+                mobileOverlay.addEventListener('click', closeMobileMenu);
+            }
+            
+            // Mobile Dropdown Toggles
+            const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+            mobileDropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const dropdown = this.nextElementSibling;
+                    dropdown.classList.toggle('active');
+                    
+                    // Rotate arrow
+                    const arrow = this.querySelector('.fa-chevron-down');
+                    arrow.classList.toggle('rotate-180');
+                });
+            });
+            
+            // Hover effects for desktop dropdowns
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    const dropdown = this.querySelector('.nav-dropdown');
+                    if (dropdown) {
+                        dropdown.style.opacity = '1';
+                        dropdown.style.visibility = 'visible';
+                        dropdown.style.transform = 'translateY(0)';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    const dropdown = this.querySelector('.nav-dropdown');
+                    if (dropdown) {
+                        dropdown.style.opacity = '0';
+                        dropdown.style.visibility = 'hidden';
+                        dropdown.style.transform = 'translateY(10px)';
+                    }
+                });
+            });
+            
+            // User dropdown for mobile
+            const userProfile = document.querySelector('.user-profile');
+            if (userProfile) {
+                const userBtn = userProfile.querySelector('.user-btn');
+                const userMenu = userProfile.querySelector('.user-menu');
+                
+                userBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
+                });
+                
+                // Close user menu when clicking outside
+                document.addEventListener('click', function() {
+                    if (userMenu) {
+                        userMenu.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Heart badge animation
+            const heartBadge = document.querySelector('.heart-badge');
+            if (heartBadge) {
+                setInterval(() => {
+                    heartBadge.style.transform = heartBadge.style.transform === 'scale(1.1)' ? 'scale(1)' : 'scale(1.1)';
+                }, 500);
+            }
+            
+            // Add CSS for arrow rotation
+            const style = document.createElement('style');
+            style.textContent = `
+                .rotate-180 {
+                    transform: rotate(180deg);
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
+{% endblock %}
