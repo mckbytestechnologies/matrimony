@@ -374,7 +374,105 @@ class ProfileCreatePage(TemplateView):
         logger.info(request.GET)
         return render(request, self.template_name, context)
 
+
+class MyProfilePage( TemplateView):
+    """Display and edit the logged-in user's profile"""
+    template_name = "my_profile.html"
+    login_url = '/login/'  # Adjust as needed
+    
+    def get(self, request, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        # Get or create profile for the logged-in user
+        profile_obj, created = Profile.objects.get_or_create(
+            user=request.user,
+            defaults={
+                "created_by": "USER",
+                "gender": "",
+                "updated_by": "USER"
+            }
+        )
+        
+        # Calculate age if DOB exists
+        age = None
+        if profile_obj.dob:
+            today = date.today()
+            age = today.year - profile_obj.dob.year - (
+                (today.month, today.day) < (profile_obj.dob.month, profile_obj.dob.day)
+            )
+        
+        context["profile"] = profile_obj
+        context["age"] = age
+        context["is_my_profile"] = True
+        
+        return render(request, self.template_name, context)
+
+
 class ProfileSaveView(TemplateView):
+    """API view for saving profile (AJAX)"""
+    # @method_decorator(login_required)
+    def post(self, request, *args, **kwargs):
+        try:
+            data = request.POST
+            files = request.FILES
+            
+            # Get or create profile for logged-in user
+            profile_obj, created = Profile.objects.get_or_create(
+                user=request.user,
+                defaults={"created_by": request.user.username}
+            )
+            
+            # Update fields
+            profile_obj.gender = data.get("gender", profile_obj.gender)
+            
+            # Handle date fields
+            dob_str = data.get("dob")
+            if dob_str:
+                try:
+                    profile_obj.dob = datetime.strptime(dob_str, "%Y-%m-%d").date()
+                except ValueError:
+                    profile_obj.dob = None
+            
+            profile_obj.religion = data.get("religion", profile_obj.religion)
+            profile_obj.caste = data.get("caste", profile_obj.caste)
+            profile_obj.phone = data.get("phone", profile_obj.phone)
+            profile_obj.bio = data.get("bio", profile_obj.bio)
+            profile_obj.location = data.get("location", profile_obj.location)
+            profile_obj.education = data.get("education", profile_obj.education)
+            profile_obj.occupation = data.get("occupation", profile_obj.occupation)
+            
+            # Handle income
+            income_str = data.get("annual_income")
+            if income_str:
+                try:
+                    profile_obj.annual_income = float(income_str)
+                except ValueError:
+                    profile_obj.annual_income = None
+            
+            profile_obj.marital_status = data.get("marital_status", profile_obj.marital_status)
+            
+            # Handle profile photo
+            if "profile_photo" in files:
+                profile_obj.profile_photo = files["profile_photo"]
+            
+            profile_obj.updated_by = request.user.username
+            profile_obj.save()
+            
+            return JsonResponse({
+                "success": True,
+                "message": "Profile saved successfully",
+                "profile_id": profile_obj.id
+            })
+            
+        except Exception as e:
+            logger.exception("Error saving profile")
+            return JsonResponse({
+                "success": False,
+                "message": f"Error saving profile: {str(e)}"
+            }, status=400)
+
+
+class ProfilSaveView(TemplateView):
     def post(self, request, *args, **kwargs):
         try:
             logger.info("Received profile save request")
@@ -483,3 +581,48 @@ class ProfilePage(TemplateView):
 
         context["profiles"] = profiles_page
         return render(request, self.template_name, context)
+
+def ajax_profile_save(request):
+    if request.method != "POST":
+        return JsonResponse({
+            "success": False,
+            "message": "Invalid request method"
+        })
+
+    try:
+        profile_obj, created = Profile.objects.get_or_create(
+            user=request.user,
+            defaults={"created_by": "SYSTEM"}
+        )
+
+        pDict = request.POST
+        files = request.FILES
+
+        profile_obj.gender = pDict.get("gender", "")
+        profile_obj.dob = pDict.get("dob") or None
+        profile_obj.religion = pDict.get("religion", "")
+        profile_obj.caste = pDict.get("caste", "")
+        profile_obj.phone = pDict.get("phone", "")
+        profile_obj.bio = pDict.get("bio", "")
+        profile_obj.location = pDict.get("location") or None
+        profile_obj.education = pDict.get("education", "")
+        profile_obj.occupation = pDict.get("occupation", "")
+        profile_obj.annual_income = pDict.get("annual_income") or None
+        profile_obj.marital_status = pDict.get("marital_status", "")
+
+        if files.get("profile_photo"):
+            profile_obj.profile_photo = files.get("profile_photo")
+
+        profile_obj.updated_by = "SYSTEM"
+        profile_obj.save()
+
+        return JsonResponse({
+            "success": True,
+            "message": "Profile saved successfully"
+        })
+
+    except Exception as e:
+        return JsonResponse({
+            "success": False,
+            "message": str(e)
+        })

@@ -49,6 +49,14 @@ urlpatterns = [
 # Correct order
             path("profile/<int:pk>/", views.ProfileDetailPage.as_view(), name="profile_detail"),
             path("profile/", views.EnquiryCreatePage.as_view(), name="profile_page"),
+            path("my-profile/", views.MyProfilePage.as_view(), name="my_profile"),
+            # mck_website/urls.py
+            path(
+                "ajax/my-profile/save/",
+                views.ajax_profile_save,
+                name="mck_ajax_my_profile_save"
+            ),
+
 
 
 ]

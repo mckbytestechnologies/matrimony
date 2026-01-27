@@ -791,7 +791,7 @@
                     </div>
                     {{ user.first_name|default:user.username }}
                 </div>
-                <a href="#" class="mobile-nav-link">
+                <a href="{% url 'mck_website:my_profile' %}" class="mobile-nav-link">
                     <i class="fas fa-user-circle"></i> My Profile
                 </a>
                 <a href="#" class="mobile-nav-link">
