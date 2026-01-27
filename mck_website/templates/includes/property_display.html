@@ -160,7 +160,10 @@
                             {% endif %}
                         </div>
 
-                        <h3 class="profile-name">{{ p.user }}</h3>
+                        <h3 class="profile-name">
+  {{ p.user.first_name }} {{ p.user.last_name }}
+</h3>
+
 
                         <div class="profile-data-list">
                             <div class="data-row">
