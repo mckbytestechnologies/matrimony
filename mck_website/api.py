@@ -244,7 +244,7 @@ def ajax_profile_save(request):
         profile_obj.caste = pDict.get("caste", "")
         profile_obj.phone = pDict.get("phone", "")
         profile_obj.bio = pDict.get("bio", "")
-        profile_obj.location = pDict.get("location") or None
+        profile_obj.location = pDict.get("location","") or None
         profile_obj.education = pDict.get("education", "")
         profile_obj.occupation = pDict.get("occupation", "")
         profile_obj.annual_income = pDict.get("annual_income") or None

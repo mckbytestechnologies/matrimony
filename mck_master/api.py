@@ -1119,13 +1119,13 @@ def clientfeedback_update_status(request, id):
 
 
 @app_logger.functionlogs(log=log_name)
-def profile_l_data(request, table_data):
+def profile_lodata(request, table_data):
     result = False
     success_msg = "Success"
     error_msg = 'Internal Server Error'
     fResult = list()
     try:
-        queryset = Profile.objects.exclude(datamode='D').order_by('-updated_on')
+        queryset = Profile.objects.exclude(datamode='A').order_by('-updated_on')
         qs, total_records, total_display_records = app_utils.method_for_datatable_operations(
             request, queryset)
 
@@ -1248,7 +1248,8 @@ def profile_load_data(request, table_data):
     fResult = []
 
     try:
-        queryset = Profile.objects.exclude(datamode='D').order_by('-updated_on')
+        queryset = Profile.objects.filter(datamode='A').order_by('-updated_on')
+
 
         # 🔐 Restrict normal users
         if not request.user.is_staff:

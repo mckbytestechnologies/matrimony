@@ -1,0 +1,497 @@
+h
+2026-01-31 15:07:57,512 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : EnquiryCreatePage.get
+2026-01-31 15:07:57,523 INFO <QueryDict: {}>
+2026-01-31 15:07:57,547 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : EnquiryCreatePage.get in 0:00:00.035027 seconds
+2026-01-31 15:08:46,409 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : EnquiryCreatePage.get
+2026-01-31 15:08:46,411 INFO <QueryDict: {}>
+2026-01-31 15:08:46,433 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : EnquiryCreatePage.get in 0:00:00.023253 seconds
+2026-01-31 15:09:01,984 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:09:01,984 INFO <QueryDict: {}>
+2026-01-31 15:09:01,997 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.013793 seconds
+2026-01-31 15:15:37,976 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : EnquiryCreatePage.get
+2026-01-31 15:15:37,976 INFO <QueryDict: {}>
+2026-01-31 15:15:38,023 ERROR Function 'EnquiryCreatePage.get' raised NoReverseMatch with error 'Reverse for 'home' not found. 'home' is not a valid view function or pattern name.'
+2026-01-31 15:16:33,381 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:16:33,387 INFO <QueryDict: {}>
+2026-01-31 15:16:33,477 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.095930 seconds
+2026-01-31 15:16:42,134 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : EnquiryCreatePage.get
+2026-01-31 15:16:42,134 INFO <QueryDict: {}>
+2026-01-31 15:16:42,193 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : EnquiryCreatePage.get in 0:00:00.058743 seconds
+2026-01-31 15:17:10,720 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:17:10,721 INFO <QueryDict: {}>
+2026-01-31 15:17:10,729 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.009070 seconds
+2026-01-31 15:27:18,675 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:27:18,684 INFO <QueryDict: {}>
+2026-01-31 15:27:18,714 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.039150 seconds
+2026-01-31 15:27:27,521 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_admin_console\\views.py'] : LandingPage.get
+2026-01-31 15:27:27,524 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_admin_console\\views.py'] : LandingPage.get in 0:00:00.003501 seconds
+2026-01-31 15:27:27,537 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_admin_console\\views.py'] : DashboardView.get
+2026-01-31 15:27:27,537 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:27:27,537 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00 seconds
+2026-01-31 15:27:27,557 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_admin_console\\views.py'] : DashboardView.get in 0:00:00.020031 seconds
+2026-01-31 15:27:29,679 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:27:29,680 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:27:29,681 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.000999 seconds
+2026-01-31 15:27:29,681 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:27:29,681 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:27:29,685 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.006346 seconds
+2026-01-31 15:27:29,813 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:27:29,813 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:27:29,819 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.006104 seconds
+2026-01-31 15:27:29,819 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:27:29,820 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.001017 seconds
+2026-01-31 15:27:29,820 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:27:29,824 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.004516 seconds
+2026-01-31 15:27:29,825 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.012644 seconds
+2026-01-31 15:27:31,831 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileCreateView.get
+2026-01-31 15:27:31,831 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:27:31,834 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.003189 seconds
+2026-01-31 15:27:31,867 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileCreateView.get in 0:00:00.036407 seconds
+2026-01-31 15:28:12,090 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileCreateView.post
+2026-01-31 15:28:12,090 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:28:12,091 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.000999 seconds
+2026-01-31 15:28:12,092 DEBUG <QueryDict: {'csrfmiddlewaretoken': ['yPUVo6VPhl7iH4o3iKVuQJQpmwbiYnXUr2PVPiCw12ZSSQjx2da6HdEl5tmivoSz', 'yPUVo6VPhl7iH4o3iKVuQJQpmwbiYnXUr2PVPiCw12ZSSQjx2da6HdEl5tmivoSz'], 'gender': ['M'], 'dob': ['2026-01-07'], 'marital_status': ['S'], 'religion': ['test'], 'caste': ['test'], 'phone': ['2345667898'], 'location': ['arai'], 'education': ['test'], 'occupation': [''], 'annual_income': ['123333'], 'bio': ['3r3r555'], 'create_button': ['SAVE']}>
+2026-01-31 15:28:12,398 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_create_update
+2026-01-31 15:28:12,403 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_create_update in 0:00:00.005354 seconds
+2026-01-31 15:28:12,403 DEBUG {'profile_id': 3}
+2026-01-31 15:28:12,403 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileCreateView.post in 0:00:00.313876 seconds
+2026-01-31 15:28:12,405 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:28:12,405 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:28:12,405 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00 seconds
+2026-01-31 15:28:12,405 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:28:12,405 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:28:12,405 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00 seconds
+2026-01-31 15:28:12,501 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:28:12,515 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:28:12,517 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.001842 seconds
+2026-01-31 15:28:12,517 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:28:12,517 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:28:12,517 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:28:12,522 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.005001 seconds
+2026-01-31 15:28:12,522 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.020885 seconds
+2026-01-31 15:28:35,794 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:28:35,797 INFO <QueryDict: {}>
+2026-01-31 15:28:35,806 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.011213 seconds
+2026-01-31 15:38:29,639 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:38:29,641 INFO <QueryDict: {}>
+2026-01-31 15:38:29,652 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.012740 seconds
+2026-01-31 15:38:38,318 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:38:38,318 INFO <QueryDict: {}>
+2026-01-31 15:38:38,318 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00 seconds
+2026-01-31 15:44:13,552 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:44:13,555 INFO <QueryDict: {}>
+2026-01-31 15:44:13,654 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.101782 seconds
+2026-01-31 15:44:16,452 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:44:16,452 INFO <QueryDict: {}>
+2026-01-31 15:44:16,471 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.019137 seconds
+2026-01-31 15:44:19,570 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:44:19,570 INFO <QueryDict: {}>
+2026-01-31 15:44:19,570 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00 seconds
+2026-01-31 15:48:25,228 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:48:25,228 INFO <QueryDict: {}>
+2026-01-31 15:48:25,320 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.092581 seconds
+2026-01-31 15:48:42,342 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:48:42,344 INFO <QueryDict: {}>
+2026-01-31 15:48:42,388 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.046735 seconds
+2026-01-31 15:49:14,894 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:49:14,894 INFO <QueryDict: {}>
+2026-01-31 15:49:14,944 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.049895 seconds
+2026-01-31 15:49:17,622 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:49:17,622 INFO <QueryDict: {}>
+2026-01-31 15:49:17,625 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.002819 seconds
+2026-01-31 15:49:19,905 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:49:19,906 INFO <QueryDict: {}>
+2026-01-31 15:49:19,915 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.010331 seconds
+2026-01-31 15:49:39,971 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:49:39,986 INFO <QueryDict: {}>
+2026-01-31 15:49:40,022 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.050811 seconds
+2026-01-31 15:50:26,492 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:50:26,494 INFO <QueryDict: {}>
+2026-01-31 15:50:26,550 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.057538 seconds
+2026-01-31 15:50:47,724 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:50:47,724 INFO <QueryDict: {}>
+2026-01-31 15:50:47,771 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.046913 seconds
+2026-01-31 15:50:59,302 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:50:59,305 INFO <QueryDict: {}>
+2026-01-31 15:50:59,355 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.058153 seconds
+2026-01-31 15:51:09,709 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:51:09,709 INFO <QueryDict: {}>
+2026-01-31 15:51:09,757 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.047789 seconds
+2026-01-31 15:51:11,592 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:51:11,592 INFO <QueryDict: {}>
+2026-01-31 15:51:11,605 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.012882 seconds
+2026-01-31 15:51:49,608 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:51:49,608 INFO <QueryDict: {}>
+2026-01-31 15:51:49,655 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.047497 seconds
+2026-01-31 15:51:57,411 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:51:57,413 INFO <QueryDict: {}>
+2026-01-31 15:51:57,432 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.021514 seconds
+2026-01-31 15:52:30,400 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:52:30,400 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:30,400 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00 seconds
+2026-01-31 15:52:30,400 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:30,402 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.002188 seconds
+2026-01-31 15:52:30,410 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.009711 seconds
+2026-01-31 15:52:30,589 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:52:30,589 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:30,593 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.004023 seconds
+2026-01-31 15:52:30,593 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:30,594 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.000986 seconds
+2026-01-31 15:52:30,594 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:52:30,599 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.004997 seconds
+2026-01-31 15:52:30,599 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.010006 seconds
+2026-01-31 15:52:32,017 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:52:32,017 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:32,017 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00 seconds
+2026-01-31 15:52:32,017 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:32,017 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:32,034 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.016091 seconds
+2026-01-31 15:52:32,119 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:52:32,119 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:32,119 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00 seconds
+2026-01-31 15:52:32,119 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:32,119 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:32,119 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:52:32,119 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00 seconds
+2026-01-31 15:52:32,119 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00 seconds
+2026-01-31 15:52:32,986 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:52:32,986 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:32,986 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00 seconds
+2026-01-31 15:52:32,986 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:32,986 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:32,986 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00 seconds
+2026-01-31 15:52:33,097 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:52:33,097 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:33,097 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00 seconds
+2026-01-31 15:52:33,097 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:33,097 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:33,097 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:52:33,102 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.005255 seconds
+2026-01-31 15:52:33,103 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.006368 seconds
+2026-01-31 15:52:33,206 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:52:33,206 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:33,208 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.002032 seconds
+2026-01-31 15:52:33,209 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:33,209 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:33,210 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.003999 seconds
+2026-01-31 15:52:33,330 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:52:33,330 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:33,332 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.002044 seconds
+2026-01-31 15:52:33,332 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:33,332 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:33,332 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:52:33,336 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.004405 seconds
+2026-01-31 15:52:33,337 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.006754 seconds
+2026-01-31 15:52:33,374 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:52:33,374 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:33,376 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.001807 seconds
+2026-01-31 15:52:33,376 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:33,376 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:33,376 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.001807 seconds
+2026-01-31 15:52:33,496 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:52:33,496 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:33,500 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.004021 seconds
+2026-01-31 15:52:33,500 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:33,501 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.001002 seconds
+2026-01-31 15:52:33,501 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:52:33,510 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.008664 seconds
+2026-01-31 15:52:33,510 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.013687 seconds
+2026-01-31 15:52:33,797 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:52:33,797 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:33,797 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00 seconds
+2026-01-31 15:52:33,797 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:33,799 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.002005 seconds
+2026-01-31 15:52:33,799 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.002005 seconds
+2026-01-31 15:52:33,924 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:52:33,925 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:33,928 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.002538 seconds
+2026-01-31 15:52:33,929 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:33,929 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:33,929 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:52:33,938 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.009467 seconds
+2026-01-31 15:52:33,938 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.014156 seconds
+2026-01-31 15:52:34,105 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:52:34,105 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:34,106 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.001123 seconds
+2026-01-31 15:52:34,107 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:34,107 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:34,109 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.004169 seconds
+2026-01-31 15:52:34,227 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:52:34,227 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:34,229 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.002035 seconds
+2026-01-31 15:52:34,230 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:34,231 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.000983 seconds
+2026-01-31 15:52:34,231 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:52:34,239 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.007826 seconds
+2026-01-31 15:52:34,239 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.011845 seconds
+2026-01-31 15:52:34,309 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:52:34,309 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:34,311 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.002000 seconds
+2026-01-31 15:52:34,311 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:34,311 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:34,312 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.003000 seconds
+2026-01-31 15:52:34,425 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:52:34,425 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:34,428 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.002697 seconds
+2026-01-31 15:52:34,429 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:34,429 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.001009 seconds
+2026-01-31 15:52:34,429 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:52:34,448 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.019702 seconds
+2026-01-31 15:52:34,448 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.023408 seconds
+2026-01-31 15:52:34,504 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:52:34,504 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:34,507 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.002999 seconds
+2026-01-31 15:52:34,508 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:34,508 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:34,510 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.005994 seconds
+2026-01-31 15:52:34,632 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:52:34,632 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:34,634 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.002001 seconds
+2026-01-31 15:52:34,634 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:34,634 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:34,634 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:52:34,637 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.002338 seconds
+2026-01-31 15:52:34,637 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.004339 seconds
+2026-01-31 15:52:34,653 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:52:34,653 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:34,656 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.002726 seconds
+2026-01-31 15:52:34,656 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:34,657 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.001005 seconds
+2026-01-31 15:52:34,661 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.007733 seconds
+2026-01-31 15:52:34,845 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:52:34,846 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:52:34,847 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.002058 seconds
+2026-01-31 15:52:34,847 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:52:34,848 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:52:34,848 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:52:34,852 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.003993 seconds
+2026-01-31 15:52:34,853 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.007461 seconds
+2026-01-31 15:53:10,546 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 15:53:10,546 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:53:10,546 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00 seconds
+2026-01-31 15:53:10,546 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:53:10,546 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 15:53:10,548 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.002009 seconds
+2026-01-31 15:53:10,645 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 15:53:10,645 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 15:53:10,646 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.001141 seconds
+2026-01-31 15:53:10,646 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 15:53:10,647 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.001000 seconds
+2026-01-31 15:53:10,647 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 15:53:10,650 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.003000 seconds
+2026-01-31 15:53:10,650 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.005141 seconds
+2026-01-31 15:53:20,487 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:53:20,487 INFO <QueryDict: {}>
+2026-01-31 15:53:20,487 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00 seconds
+2026-01-31 15:53:27,490 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:53:27,491 INFO <QueryDict: {}>
+2026-01-31 15:53:27,502 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.011559 seconds
+2026-01-31 15:55:57,384 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:55:57,388 INFO <QueryDict: {}>
+2026-01-31 15:55:57,438 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.053980 seconds
+2026-01-31 15:56:00,306 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : EnquiryCreatePage.get
+2026-01-31 15:56:00,307 INFO <QueryDict: {}>
+2026-01-31 15:56:00,366 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : EnquiryCreatePage.get in 0:00:00.060116 seconds
+2026-01-31 15:57:59,756 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 15:57:59,758 INFO <QueryDict: {}>
+2026-01-31 15:57:59,787 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.030971 seconds
+2026-01-31 15:58:15,618 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : SignIn.get
+2026-01-31 15:58:15,618 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : SignIn.get in 0:00:00 seconds
+2026-01-31 15:58:17,648 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : SignIn.post
+2026-01-31 15:58:17,648 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login
+2026-01-31 15:58:17,657 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login in 0:00:00.008788 seconds
+2026-01-31 15:58:17,658 INFO False Invalid User and Password combination {}
+2026-01-31 15:58:17,659 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : SignIn.post in 0:00:00.010788 seconds
+2026-01-31 15:58:40,027 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : SignIn.post
+2026-01-31 15:58:40,027 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login
+2026-01-31 15:58:40,032 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login in 0:00:00.005024 seconds
+2026-01-31 15:58:40,032 INFO False Invalid User and Password combination {}
+2026-01-31 15:58:40,032 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : SignIn.post in 0:00:00.005024 seconds
+2026-01-31 15:58:43,710 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : SignIn.post
+2026-01-31 15:58:43,711 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login
+2026-01-31 15:58:43,713 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login in 0:00:00.003071 seconds
+2026-01-31 15:58:43,713 INFO False Invalid User and Password combination {}
+2026-01-31 15:58:43,713 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : SignIn.post in 0:00:00.003071 seconds
+2026-01-31 15:58:47,038 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : SignIn.get
+2026-01-31 15:58:47,038 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : SignIn.get in 0:00:00 seconds
+2026-01-31 15:58:49,660 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.get
+2026-01-31 15:58:49,670 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.get in 0:00:00.009578 seconds
+2026-01-31 15:58:50,972 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.post
+2026-01-31 15:58:50,972 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login
+2026-01-31 15:58:50,972 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login in 0:00:00 seconds
+2026-01-31 15:58:50,972 INFO False Invalid User and Password combination {}
+2026-01-31 15:58:50,991 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.post in 0:00:00.019423 seconds
+2026-01-31 15:58:55,680 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.post
+2026-01-31 15:58:55,680 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login
+2026-01-31 15:58:55,680 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login in 0:00:00 seconds
+2026-01-31 15:58:55,680 INFO False Invalid User and Password combination {}
+2026-01-31 15:58:55,688 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.post in 0:00:00.008407 seconds
+2026-01-31 15:59:02,597 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.post
+2026-01-31 15:59:02,597 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login
+2026-01-31 15:59:02,597 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login in 0:00:00 seconds
+2026-01-31 15:59:02,597 INFO False Invalid User and Password combination {}
+2026-01-31 15:59:02,597 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.post in 0:00:00 seconds
+2026-01-31 15:59:19,859 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.post
+2026-01-31 15:59:19,859 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login
+2026-01-31 15:59:19,864 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login in 0:00:00.005214 seconds
+2026-01-31 15:59:19,866 INFO False Invalid User and Password combination {}
+2026-01-31 15:59:19,872 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.post in 0:00:00.012573 seconds
+2026-01-31 15:59:23,728 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.get
+2026-01-31 15:59:23,728 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.get in 0:00:00 seconds
+2026-01-31 15:59:24,947 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.post
+2026-01-31 15:59:24,947 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login
+2026-01-31 15:59:24,947 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login in 0:00:00 seconds
+2026-01-31 15:59:24,947 INFO False Invalid User and Password combination {}
+2026-01-31 15:59:24,953 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignIn.post in 0:00:00.005850 seconds
+2026-01-31 15:59:27,864 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignUp.get
+2026-01-31 15:59:27,869 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignUp.get in 0:00:00.004659 seconds
+2026-01-31 15:59:31,403 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignUp.post
+2026-01-31 15:59:31,403 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : website_user_register
+2026-01-31 15:59:31,768 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : website_user_register in 0:00:00.365484 seconds
+2026-01-31 15:59:31,768 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login
+2026-01-31 15:59:32,188 INFO request user: True
+2026-01-31 15:59:32,188 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\api.py'] : user_login in 0:00:00.419533 seconds
+2026-01-31 15:59:32,188 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : WebsiteSignUp.post in 0:00:00.785017 seconds
+2026-01-31 15:59:32,198 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : EnquiryCreatePage.get
+2026-01-31 15:59:32,198 INFO <QueryDict: {}>
+2026-01-31 15:59:32,203 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : EnquiryCreatePage.get in 0:00:00.004804 seconds
+2026-01-31 16:00:26,737 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 16:00:26,739 INFO <QueryDict: {}>
+2026-01-31 16:00:26,750 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.013481 seconds
+2026-01-31 16:01:07,752 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : SignIn.get
+2026-01-31 16:01:07,755 INFO True
+2026-01-31 16:01:07,755 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\views.py'] : SignIn.get in 0:00:00.003108 seconds
+2026-01-31 16:01:07,755 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 16:01:07,755 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:01:07,755 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00 seconds
+2026-01-31 16:01:07,755 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:01:07,772 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.016496 seconds
+2026-01-31 16:01:07,778 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.022534 seconds
+2026-01-31 16:01:07,928 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 16:01:07,928 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:01:07,932 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.004468 seconds
+2026-01-31 16:01:07,932 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:01:07,933 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.001023 seconds
+2026-01-31 16:01:07,933 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 16:01:07,949 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.015960 seconds
+2026-01-31 16:01:07,949 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.021451 seconds
+2026-01-31 16:08:39,891 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 16:08:39,892 INFO <QueryDict: {}>
+2026-01-31 16:08:39,922 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.031230 seconds
+2026-01-31 16:34:08,037 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 16:34:08,038 ERROR Function 'HomePage.get' raised FieldError with error 'Cannot resolve keyword 'updated_on' into field. Choices are: annual_income, bio, caste, created_by, datamode, dob, education, gender, id, location, marital_status, occupation, phone, profile_photo, religion, updated_by, user, user_id'
+2026-01-31 16:34:29,300 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 16:34:29,300 ERROR Function 'HomePage.get' raised FieldError with error 'Cannot resolve keyword 'updated_on' into field. Choices are: annual_income, bio, caste, created_by, datamode, dob, education, gender, id, location, marital_status, occupation, phone, profile_photo, religion, updated_by, user, user_id'
+2026-01-31 16:34:52,039 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 16:34:52,041 ERROR Function 'HomePage.get' raised FieldError with error 'Cannot resolve keyword 'updated_on' into field. Choices are: annual_income, bio, caste, created_by, datamode, dob, education, gender, id, location, marital_status, occupation, phone, profile_photo, religion, updated_by, user, user_id'
+2026-01-31 16:40:39,102 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 16:40:39,103 INFO <QueryDict: {}>
+2026-01-31 16:40:39,143 ERROR Function 'HomePage.get' raised OperationalError with error 'no such column: profile.created_on'
+2026-01-31 16:42:42,928 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 16:42:42,930 INFO <QueryDict: {}>
+2026-01-31 16:42:42,958 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.030020 seconds
+2026-01-31 16:42:56,059 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_admin_console\\views.py'] : LandingPage.get
+2026-01-31 16:42:56,060 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_admin_console\\views.py'] : LandingPage.get in 0:00:00.001000 seconds
+2026-01-31 16:42:56,066 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_admin_console\\views.py'] : DashboardView.get
+2026-01-31 16:42:56,066 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:42:56,066 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00 seconds
+2026-01-31 16:42:56,078 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_admin_console\\views.py'] : DashboardView.get in 0:00:00.011744 seconds
+2026-01-31 16:42:57,801 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 16:42:57,801 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:42:57,803 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.001998 seconds
+2026-01-31 16:42:57,803 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:42:57,803 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 16:42:57,805 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.004004 seconds
+2026-01-31 16:42:57,926 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 16:42:57,926 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:42:57,929 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.002976 seconds
+2026-01-31 16:42:57,929 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:42:57,930 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 16:42:57,930 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 16:42:57,936 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.006449 seconds
+2026-01-31 16:42:57,936 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.010415 seconds
+2026-01-31 16:44:07,554 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 16:44:07,554 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:44:07,555 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.000999 seconds
+2026-01-31 16:44:07,555 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:44:07,559 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.003999 seconds
+2026-01-31 16:44:07,577 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.023682 seconds
+2026-01-31 16:44:07,673 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 16:44:07,673 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:44:07,676 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.002847 seconds
+2026-01-31 16:44:07,676 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:44:07,678 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.001090 seconds
+2026-01-31 16:44:07,678 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 16:44:07,680 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.002753 seconds
+2026-01-31 16:44:07,680 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.007103 seconds
+2026-01-31 16:44:14,598 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileCreateView.get
+2026-01-31 16:44:14,598 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:44:14,599 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.000999 seconds
+2026-01-31 16:44:14,626 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileCreateView.get in 0:00:00.027590 seconds
+2026-01-31 16:44:30,196 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileCreateView.post
+2026-01-31 16:44:30,196 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:44:30,209 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.013533 seconds
+2026-01-31 16:44:30,210 DEBUG <QueryDict: {'csrfmiddlewaretoken': ['kspFShXE8n8bRzcDFCC8cTzgsEnngA9c9RssWaqMGliqWaTboqlbBS0Ray3cOLnw', 'kspFShXE8n8bRzcDFCC8cTzgsEnngA9c9RssWaqMGliqWaTboqlbBS0Ray3cOLnw'], 'gender': ['M'], 'dob': ['2026-01-06'], 'marital_status': ['S'], 'religion': ['test'], 'caste': ['test'], 'phone': ['2345667898'], 'location': ['jhd'], 'education': ['test'], 'occupation': ['tyrthr'], 'annual_income': ['123333'], 'bio': ['hj'], 'create_button': ['SAVE']}>
+2026-01-31 16:44:30,276 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_create_update
+2026-01-31 16:44:30,276 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_create_update in 0:00:00 seconds
+2026-01-31 16:44:30,276 DEBUG {'profile_id': 2}
+2026-01-31 16:44:30,276 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileCreateView.post in 0:00:00.080380 seconds
+2026-01-31 16:44:30,276 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 16:44:30,276 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:44:30,293 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.017290 seconds
+2026-01-31 16:44:30,293 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:44:30,295 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.002018 seconds
+2026-01-31 16:44:30,295 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.019308 seconds
+2026-01-31 16:44:30,397 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 16:44:30,397 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:44:30,399 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.001210 seconds
+2026-01-31 16:44:30,399 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:44:30,400 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.001000 seconds
+2026-01-31 16:44:30,400 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 16:44:30,402 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.002011 seconds
+2026-01-31 16:44:30,402 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.004221 seconds
+2026-01-31 16:44:56,894 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 16:44:56,894 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:44:56,909 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.015414 seconds
+2026-01-31 16:44:56,909 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:44:56,928 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.018511 seconds
+2026-01-31 16:44:56,936 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.041926 seconds
+2026-01-31 16:44:57,023 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 16:44:57,023 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:44:57,025 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.001505 seconds
+2026-01-31 16:44:57,026 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:44:57,026 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 16:44:57,026 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 16:44:57,031 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.005002 seconds
+2026-01-31 16:44:57,031 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.007672 seconds
+2026-01-31 16:46:23,615 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 16:46:23,615 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:46:23,616 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.000998 seconds
+2026-01-31 16:46:23,616 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:46:23,633 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.016898 seconds
+2026-01-31 16:46:23,641 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.026211 seconds
+2026-01-31 16:46:23,746 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 16:46:23,746 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:46:23,747 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.001011 seconds
+2026-01-31 16:46:23,747 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:46:23,748 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.000997 seconds
+2026-01-31 16:46:23,748 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 16:46:23,752 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.003999 seconds
+2026-01-31 16:46:23,752 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.006007 seconds
+2026-01-31 16:46:37,624 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get
+2026-01-31 16:46:37,624 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:46:37,639 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.015772 seconds
+2026-01-31 16:46:37,639 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:46:37,656 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00.016281 seconds
+2026-01-31 16:46:37,671 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.get in 0:00:00.047101 seconds
+2026-01-31 16:46:37,762 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post
+2026-01-31 16:46:37,762 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function
+2026-01-31 16:46:37,770 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\role_validations.py'] : validate_requested_user_function in 0:00:00.007551 seconds
+2026-01-31 16:46:37,770 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table
+2026-01-31 16:46:37,770 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_auth\\build_table.py'] : build_profile_table in 0:00:00 seconds
+2026-01-31 16:46:37,770 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data
+2026-01-31 16:46:37,775 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\api.py'] : profile_load_data in 0:00:00.005105 seconds
+2026-01-31 16:46:37,775 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_master\\views.py'] : ProfileList.post in 0:00:00.012656 seconds
+2026-01-31 16:47:12,033 INFO *******Starting function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get
+2026-01-31 16:47:12,034 INFO <QueryDict: {}>
+2026-01-31 16:47:12,043 INFO *******Finished function ['D:\\Bharath\\bharath\\appsource\\mck_website\\views.py'] : HomePage.get in 0:00:00.009881 seconds

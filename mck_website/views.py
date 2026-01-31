@@ -458,10 +458,11 @@ class ProfileSaveView(TemplateView):
             profile_obj.updated_by = request.user.username
             profile_obj.save()
             
+             # ✅ SEND REDIRECT URL
             return JsonResponse({
                 "success": True,
                 "message": "Profile saved successfully",
-                "profile_id": profile_obj.id
+                "redirect_url": reverse("mck_website:home_page")
             })
             
         except Exception as e:
@@ -508,30 +509,38 @@ class ProfileDetailPage(TemplateView):
         return render(request, self.template_name, context)
 
 
+
+
 class ProfilePage(TemplateView):
     template_name = "property_page.html"
 
     def get(self, request, *args, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = {}
 
-        profiles = Profile.objects.exclude(datamode='D')
+        # Base queryset
+        profiles = Profile.objects.exclude(datamode='D').select_related('user')
 
         # ------------------ FILTERS ------------------
-        city = request.GET.get('city')
-        gender = request.GET.get('gender')
+        city = request.GET.get('city')  # maps to location
+        gender = request.GET.get('gender')  # M / F / O
         religion = request.GET.get('religion')
         education = request.GET.get('education')
-        profession = request.GET.get('profession')
+        profession = request.GET.get('profession')  # maps to occupation
+        status = request.GET.get('status')  # S / M / D / W
         income = request.GET.get('income')
         age_min = request.GET.get('age_min')
         age_max = request.GET.get('age_max')
         sort = request.GET.get('sort', 'newest')
 
+        # ------------------ APPLY FILTERS ------------------
         if city:
             profiles = profiles.filter(location__icontains=city)
 
         if gender:
-            profiles = profiles.filter(gender=gender[0].upper())
+            # Map gender values from form to model values
+            gender_map = {'male': 'M', 'female': 'F', 'other': 'O'}
+            if gender in gender_map:
+                profiles = profiles.filter(gender=gender_map[gender])
 
         if religion:
             profiles = profiles.filter(religion__iexact=religion)
@@ -542,45 +551,78 @@ class ProfilePage(TemplateView):
         if profession:
             profiles = profiles.filter(occupation__icontains=profession)
 
+        if status:
+            profiles = profiles.filter(marital_status=status)
+
         # ------------------ AGE FILTER ------------------
-        today = date.today()
+        if age_min or age_max:
+            today = date.today()
+            
+            if age_min and age_min.isdigit():
+                # Born at most age_min years ago (minimum age)
+                max_birth_date = today - relativedelta(years=int(age_min))
+                profiles = profiles.filter(dob__lte=max_birth_date)
 
-        if age_min:
-            max_dob = today - relativedelta(years=int(age_min))
-            profiles = profiles.filter(dob__lte=max_dob)
-
-        if age_max:
-            min_dob = today - relativedelta(years=int(age_max))
-            profiles = profiles.filter(dob__gte=min_dob)
+            if age_max and age_max.isdigit():
+                # Born at least age_max years ago (maximum age)
+                min_birth_date = today - relativedelta(years=int(age_max))
+                profiles = profiles.filter(dob__gte=min_birth_date)
 
         # ------------------ INCOME FILTER ------------------
         if income:
             if income == "below_10":
                 profiles = profiles.filter(annual_income__lt=1000000)
             elif income == "10_25":
-                profiles = profiles.filter(annual_income__range=(1000000, 2500000))
+                profiles = profiles.filter(annual_income__gte=1000000, annual_income__lte=2500000)
             elif income == "25_50":
-                profiles = profiles.filter(annual_income__range=(2500000, 5000000))
+                profiles = profiles.filter(annual_income__gte=2500000, annual_income__lte=5000000)
             elif income == "50_100":
-                profiles = profiles.filter(annual_income__range=(5000000, 10000000))
+                profiles = profiles.filter(annual_income__gte=5000000, annual_income__lte=10000000)
             elif income == "above_100":
                 profiles = profiles.filter(annual_income__gt=10000000)
 
         # ------------------ SORTING ------------------
         if sort == "age_low":
-            profiles = profiles.order_by('-dob')
+            profiles = profiles.order_by('-dob')  # younger first
         elif sort == "age_high":
-            profiles = profiles.order_by('dob')
+            profiles = profiles.order_by('dob')   # older first
+        elif sort == "compatibility":
+            # Add your compatibility logic here
+            profiles = profiles.order_by('-updated_on')
         else:
             profiles = profiles.order_by('-updated_on')
 
+        # ------------------ ANNOTATE AGE ------------------
+        # Calculate age for each profile
+        profiles_list = []
+        today = date.today()
+        for profile in profiles:
+            if profile.dob:
+                age = today.year - profile.dob.year - (
+                    (today.month, today.day) < (profile.dob.month, profile.dob.day)
+                )
+                profile.age = age
+            else:
+                profile.age = None
+            
+            # Add full name from user
+            if profile.user:
+                profile.name = f"{profile.user.first_name} {profile.user.last_name}"
+            else:
+                profile.name = ""
+            
+            profiles_list.append(profile)
+
         # ------------------ PAGINATION ------------------
-        paginator = Paginator(profiles, 9)
+        paginator = Paginator(profiles_list, 9)
         page_number = request.GET.get('page')
         profiles_page = paginator.get_page(page_number)
 
         context["profiles"] = profiles_page
+        context["filters"] = request.GET
+
         return render(request, self.template_name, context)
+
 
 def ajax_profile_save(request):
     if request.method != "POST":
@@ -626,3 +668,4 @@ def ajax_profile_save(request):
             "success": False,
             "message": str(e)
         })
+

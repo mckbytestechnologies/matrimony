@@ -116,7 +116,6 @@
             text-align: center;
             margin-bottom: 50px;
             position: relative;
-            /* clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); */
         }
 
         .hero-banner h1 {
@@ -292,13 +291,6 @@
             display: flex;
             align-items: center;
             gap: 12px;
-        }
-
-        .option-item input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            accent-color: var(--gold);
-            cursor: pointer;
         }
 
         .option-item input[type="radio"] {
@@ -871,6 +863,42 @@
             line-height: 1.7;
         }
 
+        /* Premium Badge */
+        .premium-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--gold), #b89446);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 1px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .loading i {
+            font-size: 2rem;
+            color: var(--gold);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         /* Responsive Design */
         @media (max-width: 1200px) {
             .main-content {
@@ -925,48 +953,9 @@
                 gap: 30px;
             }
         }
-
-        /* Premium Badge */
-        .premium-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, var(--gold), #b89446);
-            color: white;
-            padding: 6px 15px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 11px;
-            letter-spacing: 1px;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-      
-        /* Loading Animation */
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 40px;
-        }
-
-        .loading i {
-            font-size: 2rem;
-            color: var(--gold);
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body>
-    
-
 
     <!-- Hero Banner -->
     <section class="hero-banner">
@@ -1008,19 +997,19 @@
                         <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
                         <div class="search-box">
                             <i class="fas fa-search"></i>
-                            <input type="text" name="city" placeholder="Enter City..." value="{{ request.GET.city|default:'' }}">
+                            <input type="text" name="city" placeholder="Enter City..." value="{{ filters.city|default:'' }}">
                         </div>
                     </div>
 
                     <!-- Age Range -->
                     <div class="filter-group">
                         <h3><i class="fas fa-user-clock"></i> Age Range</h3>
-                        <input type="range" class="age-range" name="age_min" min="18" max="60" value="{{ request.GET.age_min|default:'25' }}">
-                        <input type="range" class="age-range" name="age_max" min="25" max="70" value="{{ request.GET.age_max|default:'35' }}">
+                        <input type="range" class="age-range" id="age_min_range" name="age_min" min="18" max="60" value="{{ filters.age_min|default:'25' }}">
+                        <input type="range" class="age-range" id="age_max_range" name="age_max" min="25" max="70" value="{{ filters.age_max|default:'35' }}">
                         <div class="range-values">
-                            <span id="ageMinValue">{{ request.GET.age_min|default:'25' }}</span>
+                            <span id="ageMinValue">{{ filters.age_min|default:'25' }}</span>
                             <span>to</span>
-                            <span id="ageMaxValue">{{ request.GET.age_max|default:'35' }}</span>
+                            <span id="ageMaxValue">{{ filters.age_max|default:'35' }}</span>
                         </div>
                     </div>
 
@@ -1029,14 +1018,30 @@
                         <h3><i class="fas fa-user"></i> Looking For</h3>
                         <div class="filter-options">
                             <div class="option-item">
-                                <input type="radio" name="gender" id="male" value="male" {% if request.GET.gender == 'male' %}checked{% endif %}>
+                                <input type="radio" name="gender" id="male" value="male" {% if filters.gender == 'male' %}checked{% endif %}>
                                 <label for="male">Male</label>
                             </div>
                             <div class="option-item">
-                                <input type="radio" name="gender" id="female" value="female" {% if request.GET.gender == 'female' %}checked{% endif %}>
+                                <input type="radio" name="gender" id="female" value="female" {% if filters.gender == 'female' %}checked{% endif %}>
                                 <label for="female">Female</label>
                             </div>
+                            <div class="option-item">
+                                <input type="radio" name="gender" id="other" value="other" {% if filters.gender == 'other' %}checked{% endif %}>
+                                <label for="other">Other</label>
+                            </div>
                         </div>
+                    </div>
+
+                    <!-- Marital Status -->
+                    <div class="filter-group">
+                        <h3><i class="fas fa-heart"></i> Marital Status</h3>
+                        <select name="status">
+                            <option value="">Any Status</option>
+                            <option value="S" {% if filters.status == 'S' %}selected{% endif %}>Single</option>
+                            <option value="M" {% if filters.status == 'M' %}selected{% endif %}>Married</option>
+                            <option value="D" {% if filters.status == 'D' %}selected{% endif %}>Divorced</option>
+                            <option value="W" {% if filters.status == 'W' %}selected{% endif %}>Widowed</option>
+                        </select>
                     </div>
 
                     <!-- Religion -->
@@ -1044,12 +1049,12 @@
                         <h3><i class="fas fa-pray"></i> Religion</h3>
                         <select name="religion">
                             <option value="">Any Religion</option>
-                            <option value="hindu" {% if request.GET.religion == 'hindu' %}selected{% endif %}>Hindu</option>
-                            <option value="muslim" {% if request.GET.religion == 'muslim' %}selected{% endif %}>Muslim</option>
-                            <option value="christian" {% if request.GET.religion == 'christian' %}selected{% endif %}>Christian</option>
-                            <option value="sikh" {% if request.GET.religion == 'sikh' %}selected{% endif %}>Sikh</option>
-                            <option value="jain" {% if request.GET.religion == 'jain' %}selected{% endif %}>Jain</option>
-                            <option value="buddhist" {% if request.GET.religion == 'buddhist' %}selected{% endif %}>Buddhist</option>
+                            <option value="Hindu" {% if filters.religion == 'Hindu' %}selected{% endif %}>Hindu</option>
+                            <option value="Muslim" {% if filters.religion == 'Muslim' %}selected{% endif %}>Muslim</option>
+                            <option value="Christian" {% if filters.religion == 'Christian' %}selected{% endif %}>Christian</option>
+                            <option value="Sikh" {% if filters.religion == 'Sikh' %}selected{% endif %}>Sikh</option>
+                            <option value="Jain" {% if filters.religion == 'Jain' %}selected{% endif %}>Jain</option>
+                            <option value="Buddhist" {% if filters.religion == 'Buddhist' %}selected{% endif %}>Buddhist</option>
                         </select>
                     </div>
 
@@ -1058,11 +1063,12 @@
                         <h3><i class="fas fa-graduation-cap"></i> Education</h3>
                         <select name="education">
                             <option value="">Any Education</option>
-                            <option value="graduate" {% if request.GET.education == 'graduate' %}selected{% endif %}>Graduate</option>
-                            <option value="post_graduate" {% if request.GET.education == 'post_graduate' %}selected{% endif %}>Post Graduate</option>
-                            <option value="doctorate" {% if request.GET.education == 'doctorate' %}selected{% endif %}>Doctorate</option>
-                            <option value="mba" {% if request.GET.education == 'mba' %}selected{% endif %}>MBA</option>
-                            <option value="engineer" {% if request.GET.education == 'engineer' %}selected{% endif %}>Engineer</option>
+                            <option value="Bachelor" {% if filters.education == 'Bachelor' %}selected{% endif %}>Bachelor's Degree</option>
+                            <option value="Master" {% if filters.education == 'Master' %}selected{% endif %}>Master's Degree</option>
+                            <option value="PhD" {% if filters.education == 'PhD' %}selected{% endif %}>PhD</option>
+                            <option value="MBA" {% if filters.education == 'MBA' %}selected{% endif %}>MBA</option>
+                            <option value="Engineering" {% if filters.education == 'Engineering' %}selected{% endif %}>Engineering</option>
+                            <option value="Medical" {% if filters.education == 'Medical' %}selected{% endif %}>Medical</option>
                         </select>
                     </div>
 
@@ -1071,12 +1077,14 @@
                         <h3><i class="fas fa-briefcase"></i> Profession</h3>
                         <select name="profession">
                             <option value="">Any Profession</option>
-                            <option value="software" {% if request.GET.profession == 'software' %}selected{% endif %}>Software Professional</option>
-                            <option value="doctor" {% if request.GET.profession == 'doctor' %}selected{% endif %}>Doctor</option>
-                            <option value="engineer" {% if request.GET.profession == 'engineer' %}selected{% endif %}>Engineer</option>
-                            <option value="business" {% if request.GET.profession == 'business' %}selected{% endif %}>Business</option>
-                            <option value="government" {% if request.GET.profession == 'government' %}selected{% endif %}>Government Service</option>
-                            <option value="teacher" {% if request.GET.profession == 'teacher' %}selected{% endif %}>Teacher/Professor</option>
+                            <option value="Software" {% if filters.profession == 'Software' %}selected{% endif %}>Software Professional</option>
+                            <option value="Doctor" {% if filters.profession == 'Doctor' %}selected{% endif %}>Doctor</option>
+                            <option value="Engineer" {% if filters.profession == 'Engineer' %}selected{% endif %}>Engineer</option>
+                            <option value="Business" {% if filters.profession == 'Business' %}selected{% endif %}>Business</option>
+                            <option value="Government" {% if filters.profession == 'Government' %}selected{% endif %}>Government Service</option>
+                            <option value="Teacher" {% if filters.profession == 'Teacher' %}selected{% endif %}>Teacher/Professor</option>
+                            <option value="Lawyer" {% if filters.profession == 'Lawyer' %}selected{% endif %}>Lawyer</option>
+                            <option value="Architect" {% if filters.profession == 'Architect' %}selected{% endif %}>Architect</option>
                         </select>
                     </div>
 
@@ -1085,14 +1093,17 @@
                         <h3><i class="fas fa-rupee-sign"></i> Annual Income</h3>
                         <select name="income">
                             <option value="">Any Income</option>
-                            <option value="below_10" {% if request.GET.income == 'below_10' %}selected{% endif %}>Below 10 LPA</option>
-                            <option value="10_25" {% if request.GET.income == '10_25' %}selected{% endif %}>10-25 LPA</option>
-                            <option value="25_50" {% if request.GET.income == '25_50' %}selected{% endif %}>25-50 LPA</option>
-                            <option value="50_100" {% if request.GET.income == '50_100' %}selected{% endif %}>50-100 LPA</option>
-                            <option value="above_100" {% if request.GET.income == 'above_100' %}selected{% endif %}>Above 100 LPA</option>
+                            <option value="below_10" {% if filters.income == 'below_10' %}selected{% endif %}>Below 10 LPA</option>
+                            <option value="10_25" {% if filters.income == '10_25' %}selected{% endif %}>10-25 LPA</option>
+                            <option value="25_50" {% if filters.income == '25_50' %}selected{% endif %}>25-50 LPA</option>
+                            <option value="50_100" {% if filters.income == '50_100' %}selected{% endif %}>50-100 LPA</option>
+                            <option value="above_100" {% if filters.income == 'above_100' %}selected{% endif %}>Above 100 LPA</option>
                         </select>
                     </div>
 
+                    <!-- Hidden fields to preserve other filters -->
+                    <input type="hidden" name="sort" value="{{ filters.sort|default:'newest' }}">
+                    
                     <button type="submit" class="filter-button">
                         <i class="fas fa-search"></i> Find Matches
                     </button>
@@ -1110,10 +1121,10 @@
                         <div class="sort-by">
                             <span>Sort by:</span>
                             <select id="sortSelect" onchange="updateSort()">
-                                <option value="newest" {% if request.GET.sort == 'newest' or not request.GET.sort %}selected{% endif %}>Newest</option>
-                                <option value="compatibility" {% if request.GET.sort == 'compatibility' %}selected{% endif %}>Compatibility</option>
-                                <option value="age_low" {% if request.GET.sort == 'age_low' %}selected{% endif %}>Age: Low to High</option>
-                                <option value="age_high" {% if request.GET.sort == 'age_high' %}selected{% endif %}>Age: High to Low</option>
+                                <option value="newest" {% if filters.sort == 'newest' or not filters.sort %}selected{% endif %}>Newest</option>
+                                <option value="compatibility" {% if filters.sort == 'compatibility' %}selected{% endif %}>Compatibility</option>
+                                <option value="age_low" {% if filters.sort == 'age_low' %}selected{% endif %}>Age: Low to High</option>
+                                <option value="age_high" {% if filters.sort == 'age_high' %}selected{% endif %}>Age: High to Low</option>
                             </select>
                         </div>
                         <div class="view-options">
@@ -1135,16 +1146,14 @@
 
                 {% if profiles %}
                 <div class="profiles-grid" id="profilesGrid">
-                  {% for profile in profiles %}
+                    {% for profile in profiles %}
                     <!-- Profile Card -->
                     <div class="profile-card">
-                        {% if profile.is_premium %}
+                        {% if profile.premium %}
                         <div class="premium-badge">
                             <i class="fas fa-crown"></i> PREMIUM
                         </div>
                         {% endif %}
-                        
-                       
                         
                         <div class="profile-image">
                             {% if profile.profile_photo %}
@@ -1155,10 +1164,12 @@
                                 </div>
                             {% endif %}
                             <div class="profile-badge">
+                                {% if profile.marital_status %}
                                 <span class="badge-type">
-                                    <i class="fas fa-heart"></i> {{ profile.marital_status|default:"Never Married" }}
+                                    <i class="fas fa-heart"></i> {{ profile.get_marital_status_display }}
                                 </span>
-                                {% if profile.is_verified %}
+                                {% endif %}
+                                {% if profile.verified %}
                                 <span class="badge-featured">
                                     <i class="fas fa-check-circle"></i> Verified
                                 </span>
@@ -1167,53 +1178,59 @@
                         </div>
                         
                         <div class="profile-content">
-                            <h3 class="profile-name">{{ profile.name|default:"John Doe" }}</h3>
+                            <h3 class="profile-name">{{ profile.name }}</h3>
                             <div class="profile-age">
-                                <i class="fas fa-birthday-cake"></i> {{ profile.age|default:"28" }} Years
+                                <i class="fas fa-birthday-cake"></i> 
+                                {% if profile.age %}
+                                    {{ profile.age }} Years
+                                {% elif profile.dob %}
+                                    {{ profile.dob|timesince }} old
+                                {% else %}
+                                    Age not specified
+                                {% endif %}
                             </div>
                             
                             <div class="profile-details">
                                 <div class="detail">
                                     <i class="fas fa-praying-hands"></i>
                                     <span class="detail-label">Religion</span>
-                                    <span class="detail-value">{{ profile.religion|default:"Hindu" }}</span>
+                                    <span class="detail-value">{{ profile.religion|default:"Not specified" }}</span>
                                 </div>
                                 <div class="detail">
                                     <i class="fas fa-graduation-cap"></i>
                                     <span class="detail-label">Education</span>
-                                    <span class="detail-value">{{ profile.education|default:"MBA" }}</span>
+                                    <span class="detail-value">{{ profile.education|default:"Not specified" }}</span>
                                 </div>
                                 <div class="detail">
                                     <i class="fas fa-briefcase"></i>
                                     <span class="detail-label">Profession</span>
-                                    <span class="detail-value">{{ profile.profession|default:"Software Engineer" }}</span>
+                                    <span class="detail-value">{{ profile.occupation|default:"Not specified" }}</span>
                                 </div>
                                 <div class="detail">
                                     <i class="fas fa-map-marker-alt"></i>
                                     <span class="detail-label">Location</span>
-                                    <span class="detail-value">{{ profile.city|default:"Bangalore" }}</span>
+                                    <span class="detail-value">{{ profile.location|default:"Not specified" }}</span>
                                 </div>
                             </div>
                             
                             <p class="profile-bio">
-                                {{ profile.bio|default:"Well-educated professional from a respectable family. Values honesty, loyalty, and family bonds. Enjoys traveling, reading, and spending quality time with loved ones."|truncatewords:30 }}
+                                {{ profile.bio|default:"No bio available."|truncatechars:150 }}
                             </p>
                             
                             <div class="profile-actions">
-                                {% if profile.id %}
-    <a href="{% url 'mck_website:profile_detail' profile.id %}" class="view-profile">
-        <i class="fas fa-eye"></i> View Profile
-    </a>
-{% endif %}
-
+                                <a href="{% url 'mck_website:profile_detail' profile.id %}" class="view-profile">
+                                    <i class="fas fa-eye"></i> View Profile
+                                </a>
                                 <button class="express-interest" data-profile-id="{{ profile.id }}">
                                     <i class="fas fa-heart"></i> Express Interest
                                 </button>
-                               
+                                <button class="favorite-btn" data-profile-id="{{ profile.id }}">
+                                    <i class="far fa-heart"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
-                  {% endfor %}
+                    {% endfor %}
                 </div>
                 
                 <!-- Pagination -->
@@ -1306,15 +1323,14 @@
                     <h3>Complete Privacy</h3>
                     <p>Your privacy is our priority. Control who sees your profile and information</p>
                 </div>
-                
             </div>
         </div>
     </section>
 
     <script>
         // Age range display
-        const ageMinInput = document.querySelector('input[name="age_min"]');
-        const ageMaxInput = document.querySelector('input[name="age_max"]');
+        const ageMinInput = document.getElementById('age_min_range');
+        const ageMaxInput = document.getElementById('age_max_range');
         const ageMinValue = document.getElementById('ageMinValue');
         const ageMaxValue = document.getElementById('ageMaxValue');
         
@@ -1326,6 +1342,31 @@
             ageMaxInput.addEventListener('input', function() {
                 ageMaxValue.textContent = this.value;
             });
+        }
+        
+        // Update sort functionality
+        function updateSort() {
+            const sortValue = document.getElementById('sortSelect').value;
+            const form = document.getElementById('sidebarFilters');
+            const hiddenInput = form.querySelector('input[name="sort"]');
+            
+            if (hiddenInput) {
+                hiddenInput.value = sortValue;
+            } else {
+                // Create hidden input if it doesn't exist
+                const newInput = document.createElement('input');
+                newInput.type = 'hidden';
+                newInput.name = 'sort';
+                newInput.value = sortValue;
+                form.appendChild(newInput);
+            }
+            
+            form.submit();
+        }
+        
+        // Reset filters
+        function resetFilters() {
+            window.location.href = "{% url 'mck_website:mck_property_page' %}";
         }
         
         // View options functionality
@@ -1345,42 +1386,6 @@
             }
         }
         
-        // Sort functionality
-        function updateSort() {
-            const sortValue = document.getElementById('sortSelect').value;
-            const url = new URL(window.location);
-            url.searchParams.set('sort', sortValue);
-            window.location.href = url.toString();
-        }
-        
-        // Reset filters
-        function resetFilters() {
-            window.location.href = "{% url 'mck_website:mck_property_page' %}";
-        }
-        
-        // Favorite button functionality
-        document.addEventListener('click', function(e) {
-            if (e.target.closest('.favorite-btn')) {
-                const btn = e.target.closest('.favorite-btn');
-                const icon = btn.querySelector('i');
-                const profileId = btn.getAttribute('data-profile-id');
-                
-                if (icon.classList.contains('far')) {
-                    icon.classList.remove('far');
-                    icon.classList.add('fas');
-                    btn.classList.add('active');
-                    // Send AJAX request to add to favorites
-                    addToFavorites(profileId);
-                } else {
-                    icon.classList.remove('fas');
-                    icon.classList.add('far');
-                    btn.classList.remove('active');
-                    // Send AJAX request to remove from favorites
-                    removeFromFavorites(profileId);
-                }
-            }
-        });
-        
         // Interest modal functionality
         const modal = document.getElementById('interestModal');
         const interestButtons = document.querySelectorAll('.express-interest');
@@ -1388,15 +1393,13 @@
         const profileIdField = document.getElementById('profileId');
         
         interestButtons.forEach(button => {
-            if (!button.hasAttribute('onclick')) {
-                button.addEventListener('click', function() {
-                    const profileId = this.getAttribute('data-profile-id');
-                    if (profileId) {
-                        profileIdField.value = profileId;
-                        modal.style.display = 'block';
-                    }
-                });
-            }
+            button.addEventListener('click', function() {
+                const profileId = this.getAttribute('data-profile-id');
+                if (profileId) {
+                    profileIdField.value = profileId;
+                    modal.style.display = 'block';
+                }
+            });
         });
         
         closeBtn.addEventListener('click', function() {
@@ -1415,7 +1418,6 @@
             
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            const profileId = profileIdField.value;
             
             // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
@@ -1458,36 +1460,24 @@
             });
         });
         
-        // Favorite functions
-        function addToFavorites(profileId) {
-            fetch("", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-CSRFToken": getCSRFToken(),
-                    "X-Requested-With": "XMLHttpRequest"
-                },
-                body: JSON.stringify({profile_id: profileId})
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status !== "success") {
-                    console.error("Failed to add to favorites");
+        // Favorite button functionality
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.favorite-btn')) {
+                const btn = e.target.closest('.favorite-btn');
+                const icon = btn.querySelector('i');
+                const profileId = btn.getAttribute('data-profile-id');
+                
+                if (icon.classList.contains('far')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    btn.classList.add('active');
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    btn.classList.remove('active');
                 }
-            });
-        }
-        
-        function removeFromFavorites(profileId) {
-            fetch("", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-CSRFToken": getCSRFToken(),
-                    "X-Requested-With": "XMLHttpRequest"
-                },
-                body: JSON.stringify({profile_id: profileId})
-            });
-        }
+            }
+        });
         
         function getCSRFToken() {
             const name = "csrftoken";
@@ -1505,11 +1495,13 @@
             return cookieValue;
         }
 
-        // Initialize age range values
-        if (ageMinInput && ageMaxInput) {
-            ageMinValue.textContent = ageMinInput.value;
-            ageMaxValue.textContent = ageMaxInput.value;
-        }
+        // Initialize age range values on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (ageMinInput && ageMaxInput) {
+                ageMinValue.textContent = ageMinInput.value;
+                ageMaxValue.textContent = ageMaxInput.value;
+            }
+        });
     </script>
 </body>
 </html>

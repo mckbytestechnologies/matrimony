@@ -16,7 +16,7 @@ urlpatterns = [
     path('solar/',views.SolarPage.as_view(), name='solar_page'),
     path('fencing/',views.FencingPage.as_view(), name='fencing_page'),
     path('land-levelling/',views.LandLevellingPage.as_view(), name='land_levelling_page'),
-    path("properties/", views.ProfilePage.as_view(), name="mck_property_page"),
+    path("Profile-detail/", views.ProfilePage.as_view(), name="mck_property_page"),
     path('property-details/<int:pk>/', views.PropertyDetailPage.as_view(), name='property_detail'),
     path(
         "property_create/",

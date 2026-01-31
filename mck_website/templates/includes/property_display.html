@@ -199,6 +199,21 @@
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    function shuffleSlides() {
+        const wrapper = document.querySelector('.profile-slider .swiper-wrapper');
+        const slides = Array.from(wrapper.children);
+
+        for (let i = slides.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [slides[i], slides[j]] = [slides[j], slides[i]];
+        }
+
+        slides.forEach(slide => wrapper.appendChild(slide));
+    }
+
+    shuffleSlides();
+</script>
 
 <script>
     const swiper = new Swiper('.profile-slider', {

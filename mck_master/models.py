@@ -231,7 +231,7 @@ class Profile(models.Model):
     phone = models.CharField(max_length=20, blank=True)
     bio = models.TextField(blank=True)
     profile_photo = models.ImageField(upload_to='profile_photos/', blank=True, null=True)
-    location = CountryField(blank=True, null=True)
+    location = models.TextField(blank=True)
     education = models.CharField(max_length=100, blank=True)
     occupation = models.CharField(max_length=100, blank=True)
     annual_income = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
@@ -240,11 +240,23 @@ class Profile(models.Model):
     updated_by = models.CharField(max_length=8)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    datamode = models.CharField(max_length=20, default='A', choices=gv.DATAMODE_CHOICES)
+
+    # datamode = models.CharField(max_length=20, default='A', choices=gv.DATAMODE_CHOICES)
+    datamode = models.CharField(
+    max_length=1,
+    choices=gv.DATAMODE_CHOICES,  # e.g., [('A','Active'),('I','Inactive'),('D','Deleted')]
+    default='A',
+    blank=False,
+    null=False
+)
+
 
     
     def __str__(self):
-        return ''
+        if self.user:
+            return str(self.user)
+        return f"Profile-{self.id}"
+
     
     class Meta:
         db_table = 'profile'

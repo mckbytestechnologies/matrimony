@@ -298,26 +298,30 @@
         }
         
         .user-menu {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: white;
-            min-width: 200px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    min-width: 200px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+/* ACTIVE STATE */
+.user-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
         
-        .user-profile:hover .user-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
+    
         
         .user-menu-item {
             display: flex;
@@ -624,6 +628,19 @@
             background: var(--soft-pink);
             color: var(--deep-pink);
         }
+
+        .logo-icon a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon a:hover {
+    color: var(--theme-red);
+}
+
     </style>
 </head>
 <body>
@@ -642,11 +659,28 @@
         <div class="nav-container">
             <!-- Logo -->
             <div class="logo-section">
-                <div class="logo-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
+               
+
                 
             </div>
+<a href="{% url 'mck_website:home_page' %}"
+   aria-label="Go to Home"
+   style="
+       font-family: 'Playfair Display', serif;
+       font-size: 24px;
+       font-weight: 700;
+       letter-spacing: 1px;
+       color: #c60000;
+       text-decoration: none;
+       display: inline-block;
+       padding: 6px 10px;
+       transition: all 0.3s ease;
+   "
+   onmouseover="this.style.color='#9d0208'; this.style.transform='scale(1.05)'"
+   onmouseout="this.style.color='#c60000'; this.style.transform='scale(1)'"
+>
+    SRI <span style="color:#555;">VARAM</span> MALAI
+</a>
 
             <!-- Desktop Navigation -->
             <div class="main-nav">
@@ -724,7 +758,10 @@
                     <i class="fas fa-crown"></i> Go Premium
                 </a>
 
+      
+
                 {% if user.is_authenticated %}
+                
                 <div class="user-profile">
                     <button class="user-btn">
                         <div class="user-avatar">
@@ -734,11 +771,11 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="user-menu">
-                        <a href="#" class="user-menu-item">
+                        <a href="{% url 'mck_website:my_profile' %}" class="user-menu-item">
                             <i class="fas fa-user-circle"></i> My Profile
                         </a>
-                        <a href="#" class="user-menu-item">
-                            <i class="fas fa-heart"></i> My Matches
+                        <a href="{% url 'mck_website:profile_page' %}" class="user-menu-item">
+                            <i class="fas fa-heart"></i> Create Profile
                         </a>
                         <a href="#" class="user-menu-item">
                             <i class="fas fa-cog"></i> Settings
@@ -794,6 +831,9 @@
                 <a href="{% url 'mck_website:my_profile' %}" class="mobile-nav-link">
                     <i class="fas fa-user-circle"></i> My Profile
                 </a>
+                <a href="{% url 'mck_website:profile_page' %}" class="user-menu-item">
+                            <i class="fas fa-heart"></i> Create Profile
+                        </a>
                 <a href="#" class="mobile-nav-link">
                     <i class="fas fa-heart"></i> My Matches
                 </a>
@@ -957,22 +997,21 @@
             
             // User dropdown for mobile
             const userProfile = document.querySelector('.user-profile');
-            if (userProfile) {
-                const userBtn = userProfile.querySelector('.user-btn');
-                const userMenu = userProfile.querySelector('.user-menu');
-                
-                userBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
-                });
-                
-                // Close user menu when clicking outside
-                document.addEventListener('click', function() {
-                    if (userMenu) {
-                        userMenu.style.display = 'none';
-                    }
-                });
-            }
+
+                if (userProfile) {
+                    const userBtn = userProfile.querySelector('.user-btn');
+                    const userMenu = userProfile.querySelector('.user-menu');
+
+                    userBtn.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        userMenu.classList.toggle('active');
+                    });
+
+                    document.addEventListener('click', function () {
+                        userMenu.classList.remove('active');
+                    });
+                }
+
             
             // Heart badge animation
             const heartBadge = document.querySelector('.heart-badge');
