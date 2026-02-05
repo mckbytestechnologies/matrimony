@@ -525,7 +525,7 @@
 
                 <div class="col-lg-7 info-side">
                     <span class="profile-id">PROFILE ID: EM{{ profile.id|stringformat:"06d" }}</span>
-                    <h1 class="profile-name">{{ profile.user }}</h1>
+                    <h1 class="profile-name">{{ profile.user.first_name }} {{ profile.user.last_name }}</h1>
                     
                     <div class="tag-row">
                         <span class="p-tag">

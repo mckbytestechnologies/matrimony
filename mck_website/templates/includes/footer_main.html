@@ -1,421 +1,108 @@
-<!DOCTYPE html>
+{% load static %}
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Estate Footer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Demo content */
-        .demo-content {
-            padding: 60px 20px;
-            text-align: center;
-            flex: 1;
-        }
-        
-        .demo-content h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #1e293b;
-        }
-        
-        .demo-content p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: #64748b;
-        }
-        
-        /* Footer Styles */
-        footer {
-            background: linear-gradient(to right, #0f172a, #1e293b);
-            color: #fff;
-            padding: 60px 0 20px;
-            margin-top: auto;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-        
-        .footer-brand h3 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            background: linear-gradient(to right, #FFD700, #FFD700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .footer-brand p {
-            color: #cbd5e1;
-            margin-bottom: 25px;
-            line-height: 1.7;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: #fff;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background: #FFD700;
-            transform: translateY(-3px);
-        }
-        
-        .footer-heading-f {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #f8fafc;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-heading-f::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 3px;
-            background: #FFD700;
-            border-radius: 3px;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-        }
-        
-        .footer-links a:hover {
-            color: #FFD700;
-            transform: translateX(5px);
-        }
-        
-        .footer-links i {
-            margin-right: 10px;
-            font-size: 14px;
-            min-width: 16px;
-        }
-        
-        .contact-info {
-            list-style: none;
-        }
-        
-        .contact-info li {
-            display: flex;
-            margin-bottom: 15px;
-            color: #cbd5e1;
-        }
-        
-        .contact-info i {
-            margin-right: 15px;
-            color: #FFD700;
-            font-size: 18px;
-            margin-top: 3px;
-            min-width: 20px;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .copyright {
-            color: #94a3b8;
-        }
-        
-        .footer-bottom-links {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-bottom-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            white-space: nowrap;
-        }
-        
-        .footer-bottom-links a:hover {
-            color: #FFD700;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .footer-grid {
-                gap: 25px;
-            }
-            
-            .footer-brand, .footer-links-column {
-                text-align: center;
-            }
-            
-            .footer-heading-f::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .social-icons {
-                justify-content: center;
-            }
-            
-            .contact-info li {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .contact-info i {
-                margin-right: 0;
-                margin-bottom: 8px;
-            }
-        }
-        
-        @media (max-width: 640px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .footer-bottom-links {
-                justify-content: center;
-                gap: 15px;
-            }
-            
-            .demo-content h1 {
-                font-size: 28px;
-            }
-            
-            .demo-content p {
-                font-size: 16px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            footer {
-                padding: 40px 0 20px;
-            }
-            
-            .footer-grid {
-                gap: 25px;
-                margin-bottom: 40px;
-            }
-            
-            .footer-heading-f {
-                font-size: 16px;
-            }
-            
-            .footer-links a, .contact-info span {
-                font-size: 14px;
-            }
-            
-            .footer-bottom-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .footer-bottom-links a {
-                font-size: 14px;
-            }
-        }
-        
-        /* Back to top button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: #FFD700;
-            color: #0f172a;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            background: #fff;
-        }
-    </style>
-</head>
-<body>
+    <title>Wedding Matrimony</title>
+    <!--== META TAGS ==-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#f6af04">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <!--== FAV ICON(BROWSER TAB ICON) ==-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+    <!--== CSS FILES ==-->
    
+    <link rel="stylesheet" href="{% static 'web/bootstrap.css' %}">
+    <link rel="stylesheet" href=" {% static 'web/font-awesome.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'web/animate.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'web/style.css' %}">
 
-    <footer class="mt-5">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+      <![endif]-->
+</head>
+
+<body>
+
+
+    <!-- FOOTER -->
+    <section class="wed-hom-footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>SquareBox</h3>
-                    <p>India's leading real estate platform for buying, selling, and renting properties. Trusted by millions.</p>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/squareboxtransformingspace/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/squarebox.co.in/"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+            <div class="row foot-supp">
+                <h2><span>Free support:</span> +92 (8800) 68 - 8960 &nbsp;&nbsp;|&nbsp;&nbsp; <span>Email:</span>
+                    info@example.com</h2>
+            </div>
+            <div class="row wed-foot-link wed-foot-link-1">
+                <div class="col-md-4">
+                    <h4>Get In Touch</h4>
+                    <p>Address: 3812 Lena Lane City Jackson Mississippi</p>
+                    <p>Phone: <a href="tel:+917904462944">+92 (8800) 68 - 8960</a></p>
+                    <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
                 </div>
-                
-                <div class="footer-links-column">
-                    <h4 class="footer-heading-f">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="{% url 'mck_website:mck_property_page' %}"><i class="fas fa-chevron-right"></i> Buy Property</a></li>
-                        <li><a href="{% url 'mck_website:mck_property_create_page' %}"><i class="fas fa-chevron-right"></i> Rent Property</a></li>
-                        <li><a href="{% url 'mck_website:mck_property_create_page' %}"><i class="fas fa-chevron-right"></i> Sell Property</a></li>
-                        <li><a href="{% url 'mck_website:mck_property_page' %}"><i class="fas fa-chevron-right"></i> Apartment</a></li>
-                        <li><a href="{% url 'mck_website:mck_property_page' %}"><i class="fas fa-chevron-right"></i> Commercial</a></li>
+                <div class="col-md-4">
+                    <h4>HELP &amp; SUPPORT</h4>
+                    <ul>
+                        <li><a href="">About company</a>
+                        </li>
+                        <li><a href="#!">Contact us</a>
+                        </li>
+                        <li><a href="#!">Feedback</a>
+                        </li>
+                        <li><a href="">FAQs</a>
+                        </li>
+                        <li><a href="">Testimonials</a>
+                        </li>
                     </ul>
                 </div>
-                
-                <div class="footer-links-column">
-                    <h4 class="footer-heading-f">Company</h4>
-                    <ul class="footer-links">
-                        {% comment %} <li><a href="{% url 'mck_website:about_page' %}"><i class="fas fa-chevron-right"></i> About Us</a></li> {% endcomment %}
-                        {% comment %} <li><a href=""><i class="fas fa-chevron-right"></i> Service</a></li> {% endcomment %}
-                        <li><a href="{% url 'mck_website:fencing_page' %}"><i class="fas fa-chevron-right"></i> Fencing</a></li>
-                        <li><a href="{% url 'mck_website:land_levelling_page' %}"><i class="fas fa-chevron-right"></i> Land Levelling</a></li>
-                        <li><a href="{% url 'mck_website:solar_page' %}"><i class="fas fa-chevron-right"></i>  Solar Roadmap</a></li>
-
-                        <li><a href=""><i class="fas fa-chevron-right"></i> Legal Services</a></li>
-                        <li><a href="{% url 'mck_website:property_maintenance_page' %}"><i class="fas fa-chevron-right"></i> Maintenance</a></li>
-                        {% comment %} <li><a href="{% url 'mck_website:property_enquiry_page' %}"><i class="fas fa-chevron-right"></i> Contact Us</a></li> {% endcomment %}
-                    </ul>
-                </div>
-                
-                <div class="footer-links-column">
-                    <h4 class="footer-heading-f">Contact Info</h4>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>1st West Main Rd, Suthanthira Ponvizha Nagar, Gandhinagar West, Gandhi Nagar, Vellore, India, Tamil Nadu</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <span>099945 55962</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>2024squarebox@gmail.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Always Open</span>
-                        </li>
+                <div class="col-md-4 fot-soc">
+                    <h4>SOCIAL MEDIA</h4>
+                    <ul>
+                        <li><a href="#!"><img src="https://i.pinimg.com/736x/22/4a/5b/224a5bbfa24b910dd937b062a2b8bcf9.jpg" alt="" loading="lazy"></a></li>
+                        <li><a href="#!"><img src="https://i.pinimg.com/736x/99/26/4d/99264d4441b917087b8dc7ee46c10ba1.jpg" alt="" loading="lazy"></a></li>
+                        <li><a href="#!"><img src="https://i.pinimg.com/1200x/b8/c8/46/b8c846a25866985a5719049b9f0c5890.jpg" alt="" loading="lazy"></a></li>
+                        <li><a href="#!"><img src="https://i.pinimg.com/1200x/f0/8c/52/f08c524d147f46398cb54013ee7013ee.jpg" alt="" loading="lazy"></a></li>
                     </ul>
                 </div>
             </div>
-            
-           
-            
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <p>&copy; 2025 SquareBox Real Estate. All rights reserved.</p>
-                </div>
-                <div class="footer-bottom-links">
-                    <a href="{% url 'mck_website:about_page' %}">About US</a>
-                    <a href="{% url 'mck_website:privacy_policy_page' %}">Privacy Policy</a>
-                        {% comment %} <li><a href="{% url 'mck_website:property_enquiry_page' %}"><i class="fas fa-chevron-right"></i> Contact Us</a></li> {% endcomment %}
-                    <a href="{% url 'mck_website:terms_page' %}">Terms of Service</a>
-                                
-                    <a href="{% url 'mck_website:our_services_page' %}">Services</a>
-                    <a href="{% url 'mck_website:property_enquiry_page' %}">Contact US</a>
+            <div class="row foot-count">
+                <p>Company name Site - Trusted by over thousands of Boys & Girls for successfull marriage. <a
+                        href="{% url 'mck_auth:website_signup' %}" class="btn btn-primary btn-sm">Join us today !</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- END -->
+
+
+    <!-- COPYRIGHTS -->
+    <section>
+        <div class="cr">
+            <div class="container">
+                <div class="row">
+                    <p>Copyright © <span id="cry">2023</span> <a href="#!" target="_blank">Company.com</a> All
+                        rights reserved.</p>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
+    <!-- END -->
 
-    <script>
-        // Simple form validation for newsletter
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input').value;
-            if (email && email.includes('@')) {
-                alert('Thank you for subscribing to our newsletter!');
-                this.querySelector('input').value = '';
-            } else {
-                alert('Please enter a valid email address.');
-            }
-        });
-    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     
+    <script src="{% static 'webjs/jquery.min.js' %}"></script>
+    <script src="{% static 'webjs/popper.min.js' %}"></script>
+    <script src="{% static 'webjs/bootstrap.min.js' %}"></script>
+    <script src="{% static 'webjs/select-opt.js' %}"></script>
+    <script src="{% static 'webjs/slick.js' %}"></script>
+    <script src="{% static 'webjs/custom.js' %}"></script>
 </body>
+
 </html>
