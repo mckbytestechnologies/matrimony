@@ -1,8 +1,14 @@
 
 import os
-import django
+import sys
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, BASE_DIR)
+
+import django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+django.setup()
+
 django.setup()
 
 import os
@@ -201,3 +207,22 @@ def run():
     update_mck_role_master_permissions.update_role_master_permission()
     create_company_profile()
     logger.info("End !!!")
+
+
+def run():
+    logger.info("Starting ...")
+    dropDatabase()
+    createDatabase()
+    run_migrations()
+    superuser = create_authusers()
+    script_fixtures_build.build_fixtures(app_name=None)
+    script_fixtures_run.run_fixtures(app_name=None)
+    create_superuser_account(superuser)
+    generate_master_permission.generate_master_permission()
+    update_mck_role_master_permissions.update_role_master_permission()
+    create_company_profile()
+    logger.info("End !!!")
+
+
+if __name__ == "__main__":
+    run()
