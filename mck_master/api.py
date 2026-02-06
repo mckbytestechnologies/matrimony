@@ -1125,9 +1125,12 @@ def profile_lodata(request, table_data):
     error_msg = 'Internal Server Error'
     fResult = list()
     try:
-        queryset = Profile.objects.exclude(datamode='A').order_by('-updated_on')
+        queryset = Profile.objects.all()
         qs, total_records, total_display_records = app_utils.method_for_datatable_operations(
             request, queryset)
+
+        print(Profile.objects.values('id', 'datamode'))
+
 
         final_data = list()
         for qs_instance in qs:
@@ -1162,12 +1165,14 @@ def profile_retrieve_data(request, id):
     error_msg = 'Internal Server Error'
     data = dict()
     try:
-        profile = Profile.objects.filter(user=request.user).first()
+        profile = Profile.objects.filter(id=id, datamode='A').first()
         if profile:
             data['profile'] = profile
             result, msg = True, success_msg
         else:
             result, msg, data = True, success_msg, data
+            print(Profile.objects.values('id', 'datamode'))
+
     except Exception as e:
         result, msg = False, error_msg
         exc_type, exc_obj, exc_traceback = sys.exc_info()
@@ -1258,6 +1263,7 @@ def profile_load_data(request, table_data):
         qs, total_records, total_display_records = (
             app_utils.method_for_datatable_operations(request, queryset)
         )
+        print(Profile.objects.values('id', 'datamode'))
 
         final_data = []
         for qs_instance in qs:
@@ -1351,6 +1357,7 @@ def profile_create_update(request, id=None, mode=None):
 
         data['profile_id'] = obj.id
         result, msg = True, success_msg
+        print(Profile.objects.values('id', 'datamode'))
 
     except Exception as e:
         logger.exception("Failed to save profile")
