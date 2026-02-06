@@ -1158,26 +1158,7 @@ def profile_lodata(request, table_data):
         logger.error('Error at %s:%s' % (exc_traceback.tb_lineno, e))
     return result, msg, fResult
 
-@app_logger.functionlogs(log=log_name)
-def profile_retrieve_data(request, id):
-    result = False
-    success_msg = "Success"
-    error_msg = 'Internal Server Error'
-    data = dict()
-    try:
-        profile = Profile.objects.filter(id=id, datamode='A').first()
-        if profile:
-            data['profile'] = profile
-            result, msg = True, success_msg
-        else:
-            result, msg, data = True, success_msg, data
-            print(Profile.objects.values('id', 'datamode'))
 
-    except Exception as e:
-        result, msg = False, error_msg
-        exc_type, exc_obj, exc_traceback = sys.exc_info()
-        logger.error('Error at %s:%s' % (exc_traceback.tb_lineno, e))
-    return result, msg, data
 
 @app_logger.functionlogs(log=log_name)
 def profile_ce_update(request, id=None, mode=None):
@@ -1245,71 +1226,237 @@ def profile_upte_status(request, id):
 
 
 
+# @app_logger.functionlogs(log=log_name)
+# def profile_load_data(request, table_data):
+#     result = False
+#     success_msg = "Success"
+#     error_msg = 'Internal Server Error'
+#     fResult = []
+
+#     try:
+#         queryset = Profile.objects.filter(datamode='A').order_by('-updated_on')
+
+
+#         # 🔐 Restrict normal users
+#         if not request.user.is_staff:
+#             queryset = queryset.filter(user=request.user)
+
+#         qs, total_records, total_display_records = (
+#             app_utils.method_for_datatable_operations(request, queryset)
+#         )
+#         print(Profile.objects.values('id', 'datamode'))
+
+#         final_data = []
+#         for qs_instance in qs:
+#             data = []
+#             edit_url = reverse('mck_master:mck_profile_update', args=[qs_instance.id])
+
+#             for column in table_data['columns']:
+
+#                 if column['column_name'] == "user":
+#                     data.append(str(qs_instance.user))
+
+#                 elif column['column_name'] == "datamode":
+#                     status = qs_instance.get_datamode_display()
+#                     if qs_instance.datamode == "A":
+#                         data.append(f'<div class="text-success">{status}</div>')
+#                     else:
+#                         data.append(f'<div class="text-danger">{status}</div>')
+
+#                     if request.user.is_staff:
+#                         data.append(
+#                             f'<div class="text-end">'
+#                             f'<a href="{edit_url}" class="text-primary pe-2 ps-2">Edit</a>'
+#                             f'</div>'
+#                         )
+#                     else:
+#                         data.append('-')
+
+#                 else:
+#                     value = getattr(qs_instance, column['column_name'], '-')
+#                     data.append(value if value else '-')
+
+#             final_data.append(data)
+
+#         fResult = app_utils.final_dict(
+#             request, total_records, total_display_records, final_data
+#         )
+
+#         result, msg = True, success_msg
+
+#     except Exception as e:
+#         result, msg = False, error_msg
+#         logger.error(e)
+
+#     return result, msg, fResult
+
+
+
+# @app_logger.functionlogs(log=log_name)
+# def profile_create_update(request, id=None, mode=None):
+#     result = False
+#     success_msg = "Success"
+#     error_msg = "Error saving profile"
+#     data = {}
+
+#     try:
+#         if not request.user.is_authenticated:
+#             return False, "Authentication required", {}
+
+#         accountuser = request.user  # ✅ SAFE
+
+#         if mode == 'edit' and id:
+#             obj = Profile.objects.filter(id=id, datamode='A').first()
+#             if not obj:
+#                 return False, "Profile not found", {}
+#         else:
+#             # ✅ Always create new profile for ForeignKey
+#             obj = Profile(
+#                 user=request.user,
+#                 created_by=str(accountuser.id)
+#             )
+
+#         pDict = request.POST
+
+#         obj.gender = pDict.get('gender')
+#         obj.dob = pDict.get('dob') or None
+#         obj.religion = pDict.get('religion')
+#         obj.caste = pDict.get('caste')
+#         obj.phone = pDict.get('phone')
+#         obj.bio = pDict.get('bio')
+#         obj.location = pDict.get('location')
+#         obj.education = pDict.get('education')
+#         obj.occupation = pDict.get('occupation')
+#         obj.annual_income = pDict.get('annual_income') or None
+#         obj.marital_status = pDict.get('marital_status')
+
+#         if request.FILES.get('profile_photo'):
+#             obj.profile_photo = request.FILES.get('profile_photo')
+
+#         obj.updated_by = str(accountuser.id)
+#         obj.save()
+
+#         data['profile_id'] = obj.id
+#         result, msg = True, success_msg
+#         print(Profile.objects.values('id', 'datamode'))
+
+#     except Exception as e:
+#         logger.exception("Failed to save profile")
+#         result, msg = False, f"{error_msg}: {str(e)}"
+
+#     return result, msg, data
+
+
+
+# def profile_update_status(request, id=None):
+#     result = False
+#     message = 'Error'
+
+#     try:
+#         obj = Profile.objects.filter(id=id, user=request.user).first()
+#         if not obj:
+#             return False, "Profile not found"
+
+#         obj.updated_by = request.user.id
+#         obj.datamode = "A" if obj.datamode == "I" else "I"
+#         obj.save()
+
+#         result = True
+#         message = 'Success'
+
+#     except Exception as e:
+#         logger.exception(e)
+
+#     return result, message
+
+# @app_logger.functionlogs(log=log_name)
+# def profile_retrieve_data(request, id):
+#     result = False
+#     success_msg = "Success"
+#     error_msg = 'Internal Server Error'
+#     data = dict()
+#     try:
+#         profile = Profile.objects.filter(id=id, datamode='A').first()
+#         if profile:
+#             data['profile'] = profile
+#             result, msg = True, success_msg
+#         else:
+#             result, msg, data = True, success_msg, data
+#             print(Profile.objects.values('id', 'datamode'))
+
+#     except Exception as e:
+#         result, msg = False, error_msg
+#         exc_type, exc_obj, exc_traceback = sys.exc_info()
+#         logger.error('Error at %s:%s' % (exc_traceback.tb_lineno, e))
+#     return result, msg, data
+
+
 @app_logger.functionlogs(log=log_name)
 def profile_load_data(request, table_data):
     result = False
     success_msg = "Success"
-    error_msg = 'Internal Server Error'
-    fResult = []
+    error_msg = "Internal Server Error"
+    fResult = {}
 
     try:
-        queryset = Profile.objects.filter(datamode='A').order_by('-updated_on')
+        queryset = Profile.objects.filter(datamode="A").order_by("-updated_on")
 
-
-        # 🔐 Restrict normal users
-        if not request.user.is_staff:
+        # 🔐 Restrict non-admin users
+        if not request.user.is_superuser:
             queryset = queryset.filter(user=request.user)
 
         qs, total_records, total_display_records = (
             app_utils.method_for_datatable_operations(request, queryset)
         )
-        print(Profile.objects.values('id', 'datamode'))
 
         final_data = []
+
         for qs_instance in qs:
-            data = []
-            edit_url = reverse('mck_master:mck_profile_update', args=[qs_instance.id])
+            row = []
+            edit_url = reverse("mck_master:mck_profile_update", args=[qs_instance.id])
 
-            for column in table_data['columns']:
+            for column in table_data["columns"]:
 
-                if column['column_name'] == "user":
-                    data.append(str(qs_instance.user))
+                col = column["column_name"]
 
-                elif column['column_name'] == "datamode":
+                if col == "user":
+                    row.append(str(qs_instance.user))
+
+                elif col == "datamode":
                     status = qs_instance.get_datamode_display()
-                    if qs_instance.datamode == "A":
-                        data.append(f'<div class="text-success">{status}</div>')
-                    else:
-                        data.append(f'<div class="text-danger">{status}</div>')
+                    color = "text-success" if qs_instance.datamode == "A" else "text-danger"
+                    row.append(f'<div class="{color}">{status}</div>')
 
-                    if request.user.is_staff:
-                        data.append(
+                    # Action column
+                    if request.user.is_superuser:
+                        row.append(
                             f'<div class="text-end">'
-                            f'<a href="{edit_url}" class="text-primary pe-2 ps-2">Edit</a>'
+                            f'<a href="{edit_url}" class="text-primary">Edit</a>'
                             f'</div>'
                         )
                     else:
-                        data.append('-')
+                        row.append("-")
 
                 else:
-                    value = getattr(qs_instance, column['column_name'], '-')
-                    data.append(value if value else '-')
+                    value = getattr(qs_instance, col, "-")
+                    row.append(value if value not in [None, ""] else "-")
 
-            final_data.append(data)
+            final_data.append(row)
 
         fResult = app_utils.final_dict(
-            request, total_records, total_display_records, final_data
+            request,
+            total_records,
+            total_display_records,
+            final_data,
         )
 
         result, msg = True, success_msg
 
     except Exception as e:
+        logger.exception("profile_load_data failed")
         result, msg = False, error_msg
-        logger.error(e)
 
     return result, msg, fResult
-
-
 
 @app_logger.functionlogs(log=log_name)
 def profile_create_update(request, id=None, mode=None):
@@ -1322,69 +1469,102 @@ def profile_create_update(request, id=None, mode=None):
         if not request.user.is_authenticated:
             return False, "Authentication required", {}
 
-        accountuser = request.user  # ✅ SAFE
+        user = request.user
 
-        if mode == 'edit' and id:
-            obj = Profile.objects.filter(id=id, datamode='A').first()
+        # ✏️ Edit mode
+        if mode == "edit" and id:
+            obj = Profile.objects.filter(id=id, datamode="A").first()
             if not obj:
                 return False, "Profile not found", {}
         else:
-            # ✅ Always create new profile for ForeignKey
+            # ➕ Create mode
             obj = Profile(
-                user=request.user,
-                created_by=str(accountuser.id)
+                user=user,
+                created_by=str(user.id),
+                datamode="A",
             )
 
-        pDict = request.POST
+        p = request.POST
 
-        obj.gender = pDict.get('gender')
-        obj.dob = pDict.get('dob') or None
-        obj.religion = pDict.get('religion')
-        obj.caste = pDict.get('caste')
-        obj.phone = pDict.get('phone')
-        obj.bio = pDict.get('bio')
-        obj.location = pDict.get('location')
-        obj.education = pDict.get('education')
-        obj.occupation = pDict.get('occupation')
-        obj.annual_income = pDict.get('annual_income') or None
-        obj.marital_status = pDict.get('marital_status')
+        obj.gender = p.get("gender")
+        obj.dob = p.get("dob") if p.get("dob") else None
+        obj.religion = p.get("religion")
+        obj.caste = p.get("caste")
+        obj.phone = p.get("phone")
+        obj.bio = p.get("bio")
+        obj.location = p.get("location")
+        obj.education = p.get("education")
+        obj.occupation = p.get("occupation")
+        obj.annual_income = p.get("annual_income") if p.get("annual_income") else None
+        obj.marital_status = p.get("marital_status")
 
-        if request.FILES.get('profile_photo'):
-            obj.profile_photo = request.FILES.get('profile_photo')
+        if request.FILES.get("profile_photo"):
+            obj.profile_photo = request.FILES["profile_photo"]
 
-        obj.updated_by = str(accountuser.id)
+        obj.updated_by = str(user.id)
         obj.save()
 
-        data['profile_id'] = obj.id
+        data["profile_id"] = obj.id
         result, msg = True, success_msg
-        print(Profile.objects.values('id', 'datamode'))
 
     except Exception as e:
-        logger.exception("Failed to save profile")
-        result, msg = False, f"{error_msg}: {str(e)}"
+        logger.exception("profile_create_update failed")
+        result, msg = False, error_msg
 
     return result, msg, data
 
 
-
+@app_logger.functionlogs(log=log_name)
 def profile_update_status(request, id=None):
     result = False
-    message = 'Error'
+    message = "Error"
 
     try:
-        obj = Profile.objects.filter(id=id, user=request.user).first()
+        queryset = Profile.objects.filter(id=id)
+
+        if not request.user.is_superuser:
+            queryset = queryset.filter(user=request.user)
+
+        obj = queryset.first()
         if not obj:
             return False, "Profile not found"
 
-        obj.updated_by = request.user.id
-        obj.datamode = "A" if obj.datamode == "I" else "I"
+        obj.datamode = "I" if obj.datamode == "A" else "A"
+        obj.updated_by = str(request.user.id)
         obj.save()
 
         result = True
-        message = 'Success'
+        message = "Success"
 
     except Exception as e:
-        logger.exception(e)
+        logger.exception("profile_update_status failed")
 
     return result, message
 
+
+@app_logger.functionlogs(log=log_name)
+def profile_retrieve_data(request, id):
+    result = False
+    success_msg = "Success"
+    error_msg = "Internal Server Error"
+    data = {}
+
+    try:
+        queryset = Profile.objects.filter(id=id, datamode="A")
+
+        if not request.user.is_superuser:
+            queryset = queryset.filter(user=request.user)
+
+        profile = queryset.first()
+
+        if not profile:
+            return False, "Profile not found", {}
+
+        data["profile"] = profile
+        result, msg = True, success_msg
+
+    except Exception as e:
+        logger.exception("profile_retrieve_data failed")
+        result, msg = False, error_msg
+
+    return result, msg, data
